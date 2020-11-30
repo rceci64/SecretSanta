@@ -3,13 +3,22 @@
     <head>  
         <meta charset="UTF-8">
         <title>Hellow</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
         <script src="js/main.js"></script>
     </head>
     <body>
-        <h1>
-            Bones tardes!!
-        </h1>
+        <h1>Bones tardes!!</h1>
+        <button id="boto">Click me</button>
+        <div class="square"></div>
+
+        <script>
+            anime({
+                targets: '.square',
+                translateX: 250,
+                loop: true,
+            });    
+        </script>
         
     </body>
 </html>
