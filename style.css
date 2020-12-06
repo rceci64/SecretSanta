@@ -21,4 +21,32 @@ h1 {
     left: 7.5%;
     z-index: 1;
     visibility: visible;
+
+    border-radius: 25px;
+
+    font-size: xx-large;
+    text-align: justify;
+    text-justify: auto;
+    /* <!--padding: 10; */
+    padding: 5vh;
+    overflow-y: scroll;
+    scrollbar-color: blue transparent;
+    scrollbar-width: thick;
+}
+
+/* Works on Chrome/Edge/Safari */
+#dialogbox::-webkit-scrollbar {
+    width: 1em;
+}
+#dialogbox::-webkit-scrollbar-track {
+    background: transparent;
+}
+#dialogbox::-webkit-scrollbar-thumb {
+    background-color: blue;
+    border-radius: 25px;
+    border: 3px solid transparent;
+}
+
+body {
+    font-family: 'Nerko One', cursive;
 }
