@@ -35,15 +35,15 @@ h1 {
 
 #dialogbox {
     width: 85%;
-    height: 150px;
+    height: 17vh;
     background-color: rgba(255, 157, 77, 0.575);
     position: absolute;
     top: 70%;
-    left: 7.5%;
+    left: 5%;
     z-index: 1;
     visibility: visible;
 
-    border-radius: 25px;
+    border-radius: 3vh;
 
     font-size: xx-large;
     text-align: justify;
@@ -66,6 +66,26 @@ h1 {
     background-color: blue;
     border-radius: 25px;
     border: 3px solid transparent;
+}
+
+.ml10 {
+    position: relative;
+    font-weight: 900;
+    font-size: 3.3em;
+}
+  
+.ml10 .text-wrapper {
+    position: relative;
+    display: inline-block;
+    padding-top: 0.2em;
+    padding-right: 0.05em;
+    padding-bottom: 0.1em;
+    overflow: hidden;
+}
+  
+.ml10 .letter {
+    display: inline-block;
+    line-height: 1em;
 }
 
 body {
