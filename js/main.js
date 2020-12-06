@@ -1,7 +1,7 @@
 var idleAnimation;
 var animation;
 const reader = new FileReader();
-const dialoguesPath = '../dialogs.json';
+const dialoguesPath = '../dialogues.json';
 
 // Copied from https://stackoverflow.com/questions/9838812/how-can-i-open-a-json-file-in-javascript-without-jquery
 let loadJSON = (path, success, error) => {
@@ -20,7 +20,13 @@ let loadJSON = (path, success, error) => {
     };
     xhr.open("GET", path, true);
     xhr.send();
-}
+};
+
+async function loadJSONRoger (path) {
+    const responseRoger = await fetch(path)
+    const data = await responseRoger.text();
+    console.log('Dades Roger: ', data);
+};
 
 let optionOne = () => {};
 let optionTwo = () => {};
@@ -58,6 +64,7 @@ window.onload = () => {
     //dialogsObj = JSON.parse(dialogsJson);
 
     //console.log(dialogsObj);
+    loadJSONRoger(dialoguesPath);
 
     document.querySelector('#dialogbox').style.visibility = "hidden";
     document.getElementById('boto').onclick = (ev) => {
