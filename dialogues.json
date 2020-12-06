@@ -1,0 +1,24 @@
+[
+    {
+        "parent": null,
+        "childs": [""],
+        "texts" : [
+            "Welcome to Chirstmas HighSchool at the North Pole!",
+            "You will need to take 4 examns"
+        ],
+        "options": [
+            {
+                "text": "Cool, when do we start?",
+                "outcome": {
+                    "tree": 10
+                }
+            },
+            {
+                "text": "Oh no",
+                "outcome": {
+                    "tree": 10
+                }
+            }
+        ]
+    }
+]
