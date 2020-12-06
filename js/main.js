@@ -7,7 +7,6 @@ window.onload = () => {
         console.log('clic');
         
         
-        
         if (document.querySelector('#dialogbox').style.visibility == 'hidden'){
             document.querySelector('#dialogbox').style.visibility = 'visible';
 
@@ -18,8 +17,6 @@ window.onload = () => {
 
         console.log(ev.target);
     }
-
-
 
     var animation = anime({
         targets: '.square',
