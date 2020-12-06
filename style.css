@@ -12,6 +12,27 @@ h1 {
     z-index: 0;
 }
 
+.mitjo {
+    width: 75px;
+    /*background-color: tomato;*/
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    z-index: 0;
+    transform-origin: bottom;
+    /*border-radius: 5px;*/
+    border: black;
+}
+
+.mitjo:hover {
+    filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12,Color='#444')";
+    filter: url(#drop-shadow);
+    -webkit-filter: drop-shadow(0 0 4px rgba(24, 201, 255, 0.747));
+    filter: drop-shadow(0 0 4px rgba(24, 201, 255, 0.747));
+    transition: .2s ease-in-out;
+}
+
 #dialogbox {
     width: 85%;
     height: 150px;
