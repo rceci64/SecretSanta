@@ -64,7 +64,7 @@ window.onload = () => {
     //dialogsObj = JSON.parse(dialogsJson);
 
     //console.log(dialogsObj);
-    loadJSONRoger(dialoguesPath);
+    //loadJSONRoger(dialoguesPath);
 
     document.querySelector('#dialogbox').style.visibility = "hidden";
     document.getElementById('boto').onclick = (ev) => {
@@ -81,52 +81,7 @@ window.onload = () => {
         console.log(ev.target);
     }
 
-    animation = anime({
-        targets: '.square',
-        translateY: -50,
-        direction: 'alternate',
-        easing: 'easeInOutQuad',
-        duration: 150,
-        autoplay: false
-    }); 
-    
-    idleAnimation = anime({
-        targets: '.mitjo',
-        scaleY: [
-            '104%',
-            '100%',
-        ],
-        direction: 'alternate',
-        easing: 'easeInOutQuad',
-        autoplay: true,
-        duration: 400,
-        loop: true
-    });
-
-
-    // Wrap every letter in a span
-    var textWrapper = document.querySelector('.ml10 .letters');
-    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-
-   
-    anime.timeline({loop: true})
-        .add({
-            targets: '.ml10 .letter',
-            translateY: ["1.1em", 0],
-            translateZ: 0,
-            duration: 750,
-            delay: (el, i) => 50 * i
-        }).add({
-            targets: '.ml10',
-            opacity: 0,
-            duration: 1000,
-            easing: "easeOutExpo",
-            delay: 1000
-    });
-    
-    document.querySelector('.square').onclick = animation.restart;
-    //document.querySelector('.mitjo').onclick = idleAnimation.restart;
-
+    loadAnimations();
 };
 
 
