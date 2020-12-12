@@ -66,20 +66,20 @@ window.onload = () => {
     //console.log(dialogsObj);
     //loadJSONRoger(dialoguesPath);
 
-    document.querySelector('#dialogbox').style.visibility = "hidden";
-    document.getElementById('boto').onclick = (ev) => {
-        //console.log(ev);
-        console.log('clic');
+    // document.querySelector('#dialogbox').style.visibility = "hidden";
+    // document.getElementById('boto').onclick = (ev) => {
+    //     //console.log(ev);
+    //     console.log('clic');
         
-        if (document.querySelector('#dialogbox').style.visibility == 'hidden'){
-            document.querySelector('#dialogbox').style.visibility = 'visible';
+    //     if (document.querySelector('#dialogbox').style.visibility == 'hidden'){
+    //         document.querySelector('#dialogbox').style.visibility = 'visible';
 
-        } else {
-            document.querySelector('#dialogbox').style.visibility = 'hidden';
-        }
+    //     } else {
+    //         document.querySelector('#dialogbox').style.visibility = 'hidden';
+    //     }
 
-        console.log(ev.target);
-    }
+    //     console.log(ev.target);
+    // }
 
     loadAnimations();
 };

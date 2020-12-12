@@ -9,7 +9,7 @@ function loadAnimations(){
         duration: 150,
         autoplay: false
     }); 
-    
+
     // Afegir animacions dels npcs
     var npcs = document.querySelectorAll(".npc");
     npcs.forEach(element => {
@@ -32,25 +32,25 @@ function loadAnimations(){
         });
     });
     
-    // Wrap every letter in a span
-    var textWrapper = document.querySelector('.ml10 .letters');
-    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+    // // Wrap every letter in a span
+    // var textWrapper = document.querySelector('.ml10 .letters');
+    // textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
     
     
-    anime.timeline({loop: true})
-    .add({
-        targets: '.ml10 .letter',
-        translateY: ["1.1em", 0],
-        translateZ: 0,
-        duration: 750,
-        delay: (el, i) => 50 * i
-    }).add({
-        targets: '.ml10',
-        opacity: 0,
-        duration: 1000,
-        easing: "easeOutExpo",
-        delay: 1000
-    });
+    // anime.timeline({loop: true})
+    // .add({
+    //     targets: '.ml10 .letter',
+    //     translateY: ["1.1em", 0],
+    //     translateZ: 0,
+    //     duration: 750,
+    //     delay: (el, i) => 50 * i
+    // }).add({
+    //     targets: '.ml10',
+    //     opacity: 0,
+    //     duration: 1000,
+    //     easing: "easeOutExpo",
+    //     delay: 1000
+    // });
     
     //document.querySelector('.square').onclick = animation.restart;
     //document.querySelector('.mitjo').onclick = idleAnimation.restart;

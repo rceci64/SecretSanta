@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>  
+        <meta charset="UTF-8">
+        <title>Hellow</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet"> 
+        <link href="css/style.css" rel="stylesheet"> 
+        <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/animations.js"></script>
+    </head>
+    <body>
+        <div id="container" style="width: 100%; height: 100%">
+            <!-- <button id="boto" style="position: absolute; ">Click me</button> -->
+            <!-- <div class="square"></div> -->
+            <img class="npc" id="arbre" src="assets/personatges/Arbre_De_Nadal.png"  style="top:30vh; left:60vh">
+            <img class="npc" id="bola" src="assets/personatges/bola.png" style="top:50vh; left:15vh">
+            <img class="npc" id="canya" src="assets/personatges/canya_de_sucre.png" style="top:25vh; left:25vh">
+            <img class="npc" id="galeta" src="assets/personatges/galeta.png" style="top:35vh; left:17vh">
+            <img class="npc" id="mitjo" src="assets/personatges/mitjo.png" style="top:20vh; left:45vh">
+            <img class="npc" id="ninot" src="assets/personatges/ninot_de_neu.png" style="top:15vh; left:35vh">
+            <img class="player npc" id="player" src="assets/personatges/player.png" style="top:45vh; left:42vh">
+            <img class="npc" id="sac" src="assets/personatges/Sac_De_Nadal.png" style="top:55vh; left:70vh">
+            <img class="npc" id="trineu" src="assets/personatges/Trineu.png" style="top:25vh; left:53vh">
+
+            <!--UI-->
+            <!-- <div class="ui">
+                <div id="dialogue-panel">
+                    <img class="dialogue-panel" src="assets/ui/panel-horizontal-1136-by-640.png">
+                    <p class="dialogue-text">Merry christmas!</p>
+                </div>
+            </div> -->
+
+            <!-- <img class="escenari" id="taquilla" src="assets/personatges/Taquilla_Vermella_Horitzontal.svg"> -->
+
+            
+            <img class="escenari"" src="assets/escenaris/Passadis.svg" style="z-index: -4; width: 100vh; height: 100vh;">
+            
+            <div id="dialogbox">Hi! This is a sample dialog box! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim volutpat mauris, elementum lobortis ipsum malesuada vitae. Quisque elementum sed nunc sed aliquam. Vivamus vel suscipit sapien, eget sollicitudin velit. Donec ultrices in eros id convallis. In hac habitasse platea dictumst. In sollicitudin fringilla ullamcorper. Duis posuere mattis magna, sit amet blandit metus sodales eu. Fusce non suscipit nisi, eu lobortis ligula. Donec at consectetur velit, non efficitur turpis. Morbi molestie blandit erat eget egestas. Mauris facilisis turpis sed leo sagittis tristique. Aliquam commodo ultrices nibh sit amet vestibulum. Donec tortor lacus, dignissim at nulla et, efficitur tempor orci. Duis non pulvinar justo, nec suscipit urna.</div>
+            <!-- <h1 class="ml10">
+                <span class="text-wrapper">
+                  <span class="letters">Domino Dreams</span>
+                </span>
+            </h1> -->
+        </div>
+        
+    </body>
+</html>
