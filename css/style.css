@@ -1,0 +1,31 @@
+/* || FONTS */
+
+@font-face {
+    font-family: basicFont;
+    src: url("../assets/fonts/Fresh\ Lychee.ttf");
+}
+
+/* || GENERAL */
+
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+/* || UI */
+
+.ui {
+    width: 100%;
+    height: 100%;
+}
+
+.dialogue-panel {
+    position: absolute;
+    bottom: 
+    left: 25%;
+    width: 50%;
+}
+
+.dialogue-text {
+
+}
