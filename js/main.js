@@ -2,6 +2,10 @@ var idleAnimation;
 var animation;
 const reader = new FileReader();
 const dialoguesPath = '../dialogues.json';
+let dialoguesObj;
+var currentDialogue;
+let currentText = 0;
+
 
 // Copied from https://stackoverflow.com/questions/9838812/how-can-i-open-a-json-file-in-javascript-without-jquery
 let loadJSON = (path, success, error) => {
@@ -28,30 +32,56 @@ async function loadJSONRoger (path) {
     console.log('Dades Roger: ', data);
 };
 
-let optionOne = () => {};
-let optionTwo = () => {};
-let optionThree = () => {};
-let optionFour = () => {};
-let dialoguesObj;
-let currentDialogue;
-let currentText = 0;
+var option = (optionNumber) => {
+    console.log("Option clicked: ", optionNumber);
+    if(currentDialogue.options[optionNumber].next.npc != "end"){
+        
+        console.log("Option activates next line of text");
+        var currentNext = currentDialogue.options[optionNumber].next;
+        console.log(currentNext);
+        let nextItem = dialoguesObj[currentNext.npc][currentNext.id];
+        currentDialogue = nextItem;
+        //console.log(currentDialogue);
+        document.getElementById("dialogueContent").innerText = currentDialogue.text;
+        updateButtons(currentDialogue.options);
+
+        
+    } else {
+        console.log("Option ends the dialog");
+        document.getElementById("dialogueBox").style.display = "none";
+    }
+
+};
+
 
 let mainGame = (dialogues) => {
     dialoguesObj = dialogues;
-    currentDialog = dialoguesObj[0];
-    startDialog(currentDialog);
+    currentDialogue = dialoguesObj["santa"]["001"];
+    document.getElementById("dialogueBox").style.display = "";
+    document.getElementById("dialogueContent").innerText = currentDialogue.text;
+    updateButtons(currentDialogue.options);
+    
 }
 
-let startDialog = (dialogue) => {
-    //Redundant a la primera crida del joc però més endavant serveix per poder repetir texts
-    currentDialogue = dialogue;
-    console.log(currentDialogue.texts[currentText]);
-}
+let updateButtons = (options) => {
 
-let nextText = () => {
-    currentText += 1;
-    console.log(currentDialogue.texts[currentText]);
-}
+    let text = "";
+    options.forEach((element, index) => {
+        text += `<button id="opcio${index}" onclick="option(${index})" class="optionButtons">${element.label}</button>`
+    });
+    document.getElementById("buttonsContainer").innerHTML = text;
+};
+
+// let startDialog = (dialogue) => {
+//     //Redundant a la primera crida del joc però més endavant serveix per poder repetir texts
+//     currentDialogue = dialogue;
+//     console.log(currentDialogue.texts[currentText]);
+// }
+
+// let nextText = (npcId) => {
+//     currentText += 1;
+//     console.log(currentDialogue.texts[currentText]);
+// }
 
 
 window.onload = () => {
@@ -84,6 +114,21 @@ window.onload = () => {
     loadAnimations();
     loadDialogues();
 };
+
+function loadDialogues(){
+    
+    var npcs = document.querySelectorAll(".npc");
+    npcs.forEach(element => {
+        element.addEventListener("click", function(){
+            console.log(this.id, "talked");
+            // Reproduce line of dialogue
+            nextText(this.id);
+        });
+    });
+}
+
+
+
 
 
 

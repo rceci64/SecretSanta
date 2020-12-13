@@ -1,24 +1,120 @@
-[
-    {
-        "parent": null,
-        "childs": [""],
-        "texts" : [
-            "Welcome to Chirstmas HighSchool at the North Pole!",
-            "You will need to take 4 examns"
-        ],
-        "options": [
-            {
-                "text": "Cool, when do we start?",
-                "outcome": {
-                    "tree": 10
+{
+    "santa" : {
+        "001" : {
+            "text" : "Welcome to Chirstmas HighSchool at the North Pole!",
+            "options" : [
+                {
+                    "label" : "Cool, when do we start?",
+                    "outcome" : {
+                        "npc": "santa",
+                        "affinity" : 10
+                    },
+                    "next" : {
+                        "npc": "santa",
+                        "id": "002" 
+                    }
+                },
+                {
+                    "label" : "Oh no",
+                    "outcome" : {
+                        "npc": "santa",
+                        "affinity" : 10
+                    },
+                    "next" : {
+                        "npc": "santa",
+                        "id": "002" 
+                    }
                 }
-            },
-            {
-                "text": "Oh no",
-                "outcome": {
-                    "tree": 10
+            ]
+        },
+        "002" : {
+            "text" : "Ok! So as you saw, you will have to decide who you talk with. It's better to have friends! Prepare for the examn. Build affinity with your peers.",
+            "options" : [
+                {
+                    "label" : "Examn? What examn?",
+                    "outcome" : {
+                        "npc": "santa",
+                        "affinity" : 10
+                    },
+                    "next" : {
+                        "npc": "santa",
+                        "id": "003" 
+                    }
+                },
+                {
+                    "label" : "Okay, let's do this",
+                    "outcome" : {
+                        "npc": "santa",
+                        "affinity" : 10
+                    },
+                    "next" : {
+                        "npc": "end",
+                        "id": "" 
+                    }
                 }
-            }
-        ]
+            ]
+        },
+        "003" : {
+            "text" : "Delivering presents to the whole world in one night is no easy business, son. You have to prove yourself as a good ",
+            "options" : [
+                {
+                    "label" : "Okay, let's do this",
+                    "outcome" : {
+                        "npc": "santa",
+                        "affinity" : 10
+                    },
+                    "next" : {
+                        "npc": "end",
+                        "id": "" 
+                    }
+                }
+            ]
+        }
+        
+    },
+    "arbre" : {
+        "001" : {
+            
+            "text" : "I'm the tree, hi!",
+            "options" : [
+                {
+                    "label" : "Hi",
+                    "outcome" : {
+                        "npc": "tree",
+                        "affinity" : 10
+                    }
+                },
+                {
+                    "label" : "Shut",
+                    "outcome" : {
+                        "npc": "tree",
+                        "affinity" : -10
+                    }
+                }
+            ]
+        }
+        
+    },
+    "bola" : {
+        "001" : {
+            "text" : "I'm sad",
+            "options" : [
+                {
+                    "label" : "Bruh",
+                    "outcome" : {
+                        "npc": "bola",
+                        "affinity" : -10
+                    }
+                },
+                {
+                    "label" : "Oh no",
+                    "outcome" : {
+                        "npc": "bola",
+                        "affinity" : -10
+                    }
+                }
+            ]
+        }
     }
-]
+    
+}

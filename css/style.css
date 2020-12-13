@@ -12,11 +12,11 @@
     margin:0;padding:0;
 }
 
-#container {
+.container {
   width: 100vw; 
   height: calc(100vw * 9 / 16);
 
-  font-size: 10vw;
+  
 
   /* align center */
   margin: auto;
@@ -30,12 +30,11 @@
     silver; */
     background-color: cornflowerblue;
     z-index: -10;
-    /* background-image: url("assets/escenaris/Passadis.svg"); */
 }
 
 /* 100 * 16/9 = 177.778 */
 @media (min-width: 177.778vh) {
-  #container {
+  .container {
     height: 100vh;
     width: calc(100vh * 16 / 9);
 
@@ -111,7 +110,7 @@
     transition: .2s ease-in-out;
 }
 
-#dialogbox {
+#dialogueBox {
     width: 85%;
     height: 17vh;
     background-color: rgba(255, 157, 77, 0.575);
@@ -123,7 +122,7 @@
 
     border-radius: 3vh;
 
-    font-size: xx-large;
+    font-size: xxx-large;
     text-align: justify;
     text-justify: auto;
     /* <!--padding: 10; */
@@ -132,6 +131,23 @@
     scrollbar-color: blue transparent;
     scrollbar-width: thick;
 }
+
+#buttonsContainer {
+   height: 35%;
+   width: 100%;
+   background-color: blue;
+   position: relative;
+   top: 70%;
+   text-align: center;
+}
+
+.optionButtons {
+    height: 100%;
+    width: 20%;
+    margin: 0 1%;
+}
+
+
 
 /* Works on Chrome/Edge/Safari */
 #dialogbox::-webkit-scrollbar {
@@ -146,7 +162,7 @@
     border: 3px solid transparent;
 }
 
-.ml10 {
+/* .ml10 {
     position: relative;
     font-weight: 900;
     font-size: 3.3em;
@@ -164,13 +180,17 @@
 .ml10 .letter {
     display: inline-block;
     line-height: 1em;
+} */
+
+body {
+    font-family: 'Nerko One', cursive;
 }
 
-/* body {
-    font-family: 'Nerko One', cursive;
-    height: 100vh;
-    padding: 0;
-    margin: 0;
-    overflow-y: hidden;
-
-} */
+#menuTitle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -50px;
+    margin-left: -100px;
+    font-size: 2em;
+}
