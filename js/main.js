@@ -90,42 +90,22 @@ window.onload = () => {
          function(data) { console.log(data); mainGame(data); },
          function(xhr) { console.error(xhr); }
     );
-    //console.log(dialogsJson);
-    //dialogsObj = JSON.parse(dialogsJson);
-
-    //console.log(dialogsObj);
-    //loadJSONRoger(dialoguesPath);
-
-    // document.querySelector('#dialogbox').style.visibility = "hidden";
-    // document.getElementById('boto').onclick = (ev) => {
-    //     //console.log(ev);
-    //     console.log('clic');
-        
-    //     if (document.querySelector('#dialogbox').style.visibility == 'hidden'){
-    //         document.querySelector('#dialogbox').style.visibility = 'visible';
-
-    //     } else {
-    //         document.querySelector('#dialogbox').style.visibility = 'hidden';
-    //     }
-
-    //     console.log(ev.target);
-    // }
 
     loadAnimations();
-    loadDialogues();
+    //loadDialogues();
 };
 
-function loadDialogues(){
+// function loadDialogues(){
     
-    var npcs = document.querySelectorAll(".npc");
-    npcs.forEach(element => {
-        element.addEventListener("click", function(){
-            console.log(this.id, "talked");
-            // Reproduce line of dialogue
-            nextText(this.id);
-        });
-    });
-}
+//     var npcs = document.querySelectorAll(".npc");
+//     npcs.forEach(element => {
+//         element.addEventListener("click", function(){
+//             console.log(this.id, "talked");
+//             // Reproduce line of dialogue
+//             nextText(this.id);
+//         });
+//     });
+// }
 
 
 

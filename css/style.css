@@ -16,8 +16,6 @@
   width: 100vw; 
   height: calc(100vw * 9 / 16);
 
-  
-
   /* align center */
   margin: auto;
   position: absolute;
@@ -27,8 +25,8 @@
   /* background:
     url(data:image/gif;base64,R0lGODlhAgAUAIABAB1ziv///yH5BAEAAAEALAAAAAACABQAAAIHhI+pa+EPCwA7) repeat-y center top,
     url(data:image/gif;base64,R0lGODlhFAACAIABAIodZP///yH5BAEAAAEALAAAAAAUAAIAAAIIhI8Zu+nIVgEAOw==) repeat-x left center,
-    silver; */
-    background-color: cornflowerblue;
+    silver; 
+    background-color: cornflowerblue;*/
     z-index: -10;
 }
 
@@ -147,8 +145,6 @@
     margin: 0 1%;
 }
 
-
-
 /* Works on Chrome/Edge/Safari */
 #dialogbox::-webkit-scrollbar {
     width: 1em;
@@ -161,26 +157,6 @@
     border-radius: 25px;
     border: 3px solid transparent;
 }
-
-/* .ml10 {
-    position: relative;
-    font-weight: 900;
-    font-size: 3.3em;
-}
-  
-.ml10 .text-wrapper {
-    position: relative;
-    display: inline-block;
-    padding-top: 0.2em;
-    padding-right: 0.05em;
-    padding-bottom: 0.1em;
-    overflow: hidden;
-}
-  
-.ml10 .letter {
-    display: inline-block;
-    line-height: 1em;
-} */
 
 body {
     font-family: 'Nerko One', cursive;
