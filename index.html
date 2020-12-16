@@ -17,7 +17,7 @@
     <body>
         <button onclick="loadScene('scene1')" class="optionButtons" style="position: absolute; height: 50px; top: 20%; left: 80%">Load scene 1</button>
         <button onclick="loadScene('scene2')" class="optionButtons" style="position: absolute; height: 50px; top: 30%; left: 80%">Load scene 2</button>
-        <div class="container active" id="scene1">
+        <div class="container active" id="scene1" style="opacity: 1;">
             <img class="escenari" src="assets/escenaris/Passadis.svg" style="z-index: -4; width: 100%; height: 100%;">
             
             <img class="npc" id="arbre" src="assets/personatges/Arbre_De_Nadal.png"  style="top:30%; left:60%">
@@ -42,7 +42,7 @@
             </div>
 
         </div>
-        <div class="container" id="scene2" style="background-color: cadetblue; opacity: 0;">
+        <div class="container" id="scene2" style="background-color: cadetblue; opacity: 0; display: none;">
             <img class="npc" id="bola" src="assets/personatges/bola.png" style="top:70%; left:50%">
         </div>
     </body>

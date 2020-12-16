@@ -39,23 +39,37 @@ function randomInteger(min, max) {
 }
 
 function loadScene(id){
-    anime({
-        targets: ".container.active",
-        opacity: 0,
-        easing: 'easeInOutQuad',
-        autoplay: true,
-        duration: 500,
-        loop: false
-    });
-    anime({
-        targets: "#" + id,
-        opacity: 100,
-        easing: 'easeInOutQuad',
-        autoplay: true,
-        duration: 500,
-        loop: false,
-        delay: 500
-    });
-    document.querySelector(".container.active").className = "container";
-    document.querySelector("#" + id).className = "container active";
+
+    if (id != document.querySelector(".container.active").id){
+
+        var tl = anime.timeline({
+            easing: 'easeInOutQuad',
+            duration: 800
+        });
+
+        var active = document.querySelector(".container.active");
+        var hidden = document.querySelector("#" + id);
+
+        tl
+        .add({
+            targets: active,
+            opacity: 0,
+            complete: function(){
+                active.className = "container";
+                active.style.display = "none";
+            }
+        });
+
+        tl
+        .add({
+            targets: "#" + id,
+            opacity: 1,
+            begin: function(){
+                hidden.style.display = "";
+            },
+            complete: function(){
+                hidden.className = "container active";
+            }
+        });
+    }
 }
