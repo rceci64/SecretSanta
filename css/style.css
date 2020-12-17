@@ -58,6 +58,24 @@
 
 } */
 
+#titleText {
+    position: absolute;
+    top:20%;
+    left:50%;
+
+    /*filter: invert(99%) sepia(0%) saturate(0%) hue-rotate(310deg) brightness(102%) contrast(102%);*/
+}
+
+.menuButton {
+    height: 50px;
+    margin-top: -25px;
+    width: 140px;
+    margin-left: -70px;
+    background:none;
+    border:none;
+    position: absolute;
+}
+
 .square {
     width: 75px;
     height: 100px;
@@ -158,8 +176,10 @@
     border: 3px solid transparent;
 }
 
-body {
+html, body {
     font-family: 'Nerko One', cursive;
+    overflow: hidden;
+    background-color: black;
 }
 
 #menuTitle {
