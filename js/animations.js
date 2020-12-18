@@ -32,6 +32,8 @@ function loadAnimations(){
         });
     });
 
+    loadScene('scene1');
+
 }
 
 function randomInteger(min, max) {

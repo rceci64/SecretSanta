@@ -87,7 +87,6 @@
 }
 
 .npc {
-    width: 5%;
     height: auto;
     position: absolute;
     /* top: 50%;
@@ -128,24 +127,27 @@
 
 #dialogueBox {
     width: 85%;
-    height: 17vh;
+    height: auto;
     background-color: rgba(255, 157, 77, 0.575);
     position: absolute;
-    top: 70%;
+    top: 75%;
     left: 5%;
     z-index: 1;
     visibility: visible;
 
-    border-radius: 3vh;
-
-    font-size: xxx-large;
+    border-radius: 1%;
     text-align: justify;
     text-justify: auto;
     /* <!--padding: 10; */
     padding: 5vh;
+    
+}
+
+#dialogueContent {
     overflow-y: scroll;
     scrollbar-color: blue transparent;
     scrollbar-width: thick;
+    font-size: 4vw;
 }
 
 #buttonsContainer {
@@ -161,19 +163,6 @@
     height: 100%;
     width: 20%;
     margin: 0 1%;
-}
-
-/* Works on Chrome/Edge/Safari */
-#dialogbox::-webkit-scrollbar {
-    width: 1em;
-}
-#dialogbox::-webkit-scrollbar-track {
-    background: transparent;
-}
-#dialogbox::-webkit-scrollbar-thumb {
-    background-color: blue;
-    border-radius: 25px;
-    border: 3px solid transparent;
 }
 
 html, body {
