@@ -12,6 +12,8 @@ let startSnow = () => {
     snowStorm.flakesMaxActive = 128;
     snowStorm.followMouse = false;
     snowStorm.freezeOnBlur = false; 
+    snowStorm.vMaxX = 1;
+    snowStorm.vMaxY = 1.5;
     snowStorm.targetElement = document.querySelector(".container.active");
     stopSnowOnLoadNextScene = true;
 }
