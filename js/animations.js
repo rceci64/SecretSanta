@@ -32,12 +32,20 @@ function loadAnimations(){
         });
     });
 
-    //loadScene('scene1');
+    loadScene('scene0');
 
 }
 
 function randomInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function nextScene(){
+    var str = document.querySelector(".container.active").id;
+    console.log("str ", str);
+    var number = parseInt(str.slice(-1)) + 1;
+    console.log("number ", number);
+    loadScene("scene" + number);
 }
 
 function loadScene(id){
@@ -78,5 +86,7 @@ function loadScene(id){
                 hidden.className = "container active";
             }
         });
+
+        document.getElementById("dialogueBox").style.display = "none";
     }
 }

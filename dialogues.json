@@ -1,24 +1,13 @@
 {
     "santa" : {
         "001" : {
-            "text" : "Welcome to Chirstmas HighSchool at the North Pole!",
+            "text" : "Again, you're late. Did you know that today is exam day?",
             "options" : [
                 {
-                    "label" : "Cool, when do we start?",
+                    "label" : "Exams, are you kidding?",
                     "outcome" : {
                         "npc": "santa",
-                        "affinity" : 10
-                    },
-                    "next" : {
-                        "npc": "santa",
-                        "id": "002" 
-                    }
-                },
-                {
-                    "label" : "Oh no",
-                    "outcome" : {
-                        "npc": "santa",
-                        "affinity" : 10
+                        "affinity" : 0
                     },
                     "next" : {
                         "npc": "santa",
@@ -28,24 +17,97 @@
             ]
         },
         "002" : {
-            "text" : "Ok! So as you saw, you will have to decide who you talk with. It's better to have friends! Prepare for the examn. Build affinity with your peers.",
+            "text" : "Ok! So as you saw, you will have to decide who you talk with. It's better to have friends! Prepare for the exam. Build affinity with your peers.",
             "options" : [
                 {
-                    "label" : "Examn? What examn?",
+                    "label" : "Okay...",
                     "outcome" : {
                         "npc": "santa",
-                        "affinity" : 10
+                        "affinity" : 0
                     },
                     "next" : {
                         "npc": "santa",
                         "id": "003" 
                     }
-                },
+                }
+            ]
+        },
+        "003" : {
+            "text" : "You that if you fail, this year you are not getting any presents, right?",
+            "options" : [
                 {
-                    "label" : "Okay, let's do this",
+                    "label" : "I know...",
                     "outcome" : {
                         "npc": "santa",
                         "affinity" : 10
+                    },
+                    "next" : {
+                        "npc": "endScene",
+                        "id": "" 
+                    }
+                }
+            ]
+        }
+        
+    },
+    "mitjo" : {
+        "001" : {
+            "text" : "What are you looking at?",
+            "options" : [
+                {
+                    "label" : "Please don't hit me!",
+                    "outcome" : {
+                        "npc": "mitjo",
+                        "affinity" : 0
+                    },
+                    "next" : {
+                        "npc": "mitjo",
+                        "id": "002" 
+                    }
+                },
+                {
+                    "label" : "Sorry to bother you, isn't it you that smells?",
+                    "outcome" : {
+                        "npc": "mitjo",
+                        "affinity" : 0
+                    },
+                    "next" : {
+                        "npc": "mitjo",
+                        "id": "002" 
+                    }
+                },
+                {
+                    "label" : "I don't want any problems with you, just wanted to wish you good luck in the exam.",
+                    "outcome" : {
+                        "npc": "mitjo",
+                        "affinity" : 0.5
+                    },
+                    "next" : {
+                        "npc": "mitjo",
+                        "id": "003" 
+                    }
+                },
+                {
+                    "label" : "I just arrived and this is how you treat me?",
+                    "outcome" : {
+                        "npc": "mitjo",
+                        "affinity" : 0
+                    },
+                    "next" : {
+                        "npc": "mitjo",
+                        "id": "002" 
+                    }
+                }
+            ]
+        },
+        "002" : {
+            "text" : "Who do you think are you are talking to? Go away before we start any troubles.",
+            "options" : [
+                {
+                    "label" : "...",
+                    "outcome" : {
+                        "npc": "mitjo",
+                        "affinity" : 0
                     },
                     "next" : {
                         "npc": "end",
@@ -55,13 +117,67 @@
             ]
         },
         "003" : {
-            "text" : "Delivering presents to the whole world in one night is no easy business, son. You have to prove yourself as a good ",
+            "text" : "Thank you but I don't think that it is going to go any good for me. This kind of exams aren't meant for folks like me...My dream is to become a footballer, not a christmas present expert!",
             "options" : [
                 {
-                    "label" : "Okay, let's do this",
+                    "label" : "Whatever you do, you're sure to get far!",
                     "outcome" : {
-                        "npc": "santa",
-                        "affinity" : 10
+                        "npc": "mitjo",
+                        "affinity" : 0.5
+                    },
+                    "next" : {
+                        "npc": "mitjo",
+                        "id": "004" 
+                    }
+                },
+                {
+                    "label" : "Footballer? You're a sock!",
+                    "outcome" : {
+                        "npc": "mitjo",
+                        "affinity" : -0.5
+                    },
+                    "next" : {
+                        "npc": "mitjo",
+                        "id": "005" 
+                    }
+                },
+                {
+                    "label" : "You're stoned",
+                    "outcome" : {
+                        "npc": "mitjo",
+                        "affinity" : -0.5
+                    },
+                    "next" : {
+                        "npc": "mitjo",
+                        "id": "005" 
+                    }
+                }
+            ]
+        },
+        "004" : {
+            "text" : "You know what? You're not that bad as a friend as I thought",
+            "options" : [
+                {
+                    "label" : "...",
+                    "outcome" : {
+                        "npc": "mitjo",
+                        "affinity" : 0
+                    },
+                    "next" : {
+                        "npc": "end",
+                        "id": "" 
+                    }
+                }
+            ]
+        },
+        "005" : {
+            "text" : "Get lost, fool.",
+            "options" : [
+                {
+                    "label" : "...",
+                    "outcome" : {
+                        "npc": "mitjo",
+                        "affinity" : 0
                     },
                     "next" : {
                         "npc": "end",
@@ -70,51 +186,9 @@
                 }
             ]
         }
+
         
-    },
-    "arbre" : {
-        "001" : {
-            
-            "text" : "I'm the tree, hi!",
-            "options" : [
-                {
-                    "label" : "Hi",
-                    "outcome" : {
-                        "npc": "tree",
-                        "affinity" : 10
-                    }
-                },
-                {
-                    "label" : "Shut",
-                    "outcome" : {
-                        "npc": "tree",
-                        "affinity" : -10
-                    }
-                }
-            ]
-        }
-        
-    },
-    "bola" : {
-        "001" : {
-            "text" : "I'm sad",
-            "options" : [
-                {
-                    "label" : "Bruh",
-                    "outcome" : {
-                        "npc": "bola",
-                        "affinity" : -10
-                    }
-                },
-                {
-                    "label" : "Oh no",
-                    "outcome" : {
-                        "npc": "bola",
-                        "affinity" : -10
-                    }
-                }
-            ]
-        }
     }
+
     
 }

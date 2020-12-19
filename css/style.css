@@ -136,7 +136,7 @@
     height: 20%;
 
 
-    border-radius: 1%;
+    border-radius: 1vw;
     text-align: justify;
     text-justify: auto;
     
@@ -146,7 +146,7 @@
     overflow-y: scroll;
     scrollbar-color: blue transparent;
     scrollbar-width: thick;
-    font-size: 4vw;
+    font-size: 2vw;
 }
 
 #buttonsContainer {
@@ -156,6 +156,7 @@
    position: relative;
    top: 70%;
    text-align: center;
+   z-index: 2;
 }
 
 .optionButtons {
