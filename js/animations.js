@@ -32,7 +32,7 @@ function loadAnimations(){
         });
     });
 
-    loadScene('scene1');
+    //loadScene('scene1');
 
 }
 
