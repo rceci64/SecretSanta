@@ -46,7 +46,12 @@ function loadScene(id){
 
         var tl = anime.timeline({
             easing: 'easeInOutQuad',
-            duration: 800
+            duration: 800,
+            complete: function(){
+                if (stopSnowOnLoadNextScene) {
+                    console.log("Toggled");
+                }
+            }
         });
 
         var active = document.querySelector(".container.active");

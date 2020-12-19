@@ -5,7 +5,16 @@ const dialoguesPath = '../dialogues.json';
 let dialoguesObj;
 var currentDialogue;
 let currentText = 0;
+var stopSnowOnLoadNextScene = false;
 
+let startSnow = () => {
+    snowStorm.flakesMax = 256;
+    snowStorm.flakesMaxActive = 128;
+    snowStorm.followMouse = false;
+    snowStorm.freezeOnBlur = false; 
+    snowStorm.targetElement = document.querySelector(".container.active");
+    stopSnowOnLoadNextScene = true;
+}
 
 // Copied from https://stackoverflow.com/questions/9838812/how-can-i-open-a-json-file-in-javascript-without-jquery
 let loadJSON = (path, success, error) => {
@@ -91,6 +100,7 @@ window.onload = () => {
          function(xhr) { console.error(xhr); }
     );
 
+    startSnow();
     loadAnimations();
     //loadDialogues();
 };
