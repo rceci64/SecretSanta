@@ -87,6 +87,6 @@ function loadScene(id){
             }
         });
 
-        document.getElementById("dialogueBox").style.display = "none";
+        document.getElementById("dialogueBox").parentElement.style.display = "none";
     }
 }

@@ -65,11 +65,11 @@ var option = (optionNumber) => {
 
     } else if (currentDialogue.options[optionNumber].next.npc == "end") {
         console.log("Option ends the dialog");
-        document.getElementById("dialogueBox").style.display = "none";
+        document.getElementById("dialogueBox").parentElement.style.display = "none";
         currentDialogue = "ended";
     } else if(currentDialogue.options[optionNumber].next.npc == "endScene") {
         console.log("Option ends the dialog");
-        document.getElementById("dialogueBox").style.display = "none";
+        document.getElementById("dialogueBox").parentElement.style.display = "none";
         currentDialogue = "ended";
         nextScene();
     }
@@ -80,7 +80,7 @@ var option = (optionNumber) => {
 let mainGame = (dialogues) => {
     dialoguesObj = dialogues;
     currentDialogue = dialoguesObj["santa"]["001"];
-    document.getElementById("dialogueBox").style.display = "flex";
+    document.getElementById("dialogueBox").parentElement.style.display = "flex";
     document.getElementById("dialogueContent").innerText = currentDialogue.text;
     updateButtons(currentDialogue.options);
     
@@ -124,7 +124,7 @@ var startNPCDialog = (idNPC, scene) => {
     console.log(currentDialogue);
     if(currentDialogue == "ended"){
         currentDialogue = dialoguesObj[idNPC]["001"];
-        document.getElementById("dialogueBox").style.display = "flex";
+        document.getElementById("dialogueBox").parentElement.style.display = "flex";
         document.getElementById("dialogueContent").innerText = currentDialogue.text;
         updateButtons(currentDialogue.options);
     }
