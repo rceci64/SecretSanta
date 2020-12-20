@@ -2,7 +2,7 @@ var idleAnimation;
 var animation;
 var dialogElement;
 const reader = new FileReader();
-const dialoguesPath = '../dialogues.json';
+const dialoguesPath = '/dialogues.json';
 let dialoguesObj;
 var currentDialogue;
 let currentText = 0;
@@ -43,6 +43,7 @@ async function loadJSONRoger (path) {
     const responseRoger = await fetch(path)
     const data = await responseRoger.text();
     console.log('Dades Roger: ', data);
+    return (JSON.parse(data));
 };
 
 var option = (optionNumber) => {
@@ -115,6 +116,8 @@ window.onload = () => {
         function(data) { console.log(data); mainGame(data); },
         function(xhr) { console.error(xhr); }
     );
+    //mainGame(loadJSONRoger(dialoguesPath));
+
         
     startSnow();
     loadAnimations();
