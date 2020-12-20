@@ -32,7 +32,7 @@ function loadAnimations(){
         });
     });
 
-    loadScene('scene0');
+    //loadScene('scene0');
 
 }
 
@@ -86,7 +86,24 @@ function loadScene(id){
                 hidden.className = "container active";
             }
         });
-
+        
         document.getElementById("dialogueBox").parentElement.style.display = "none";
+
+        let box = document.getElementById("dialogueBox").parentElement;
+        box.style.opacity = 0;
+        currentDialogue = dialoguesObj["santa"]["001"];
+        document.getElementById("dialogueContent").innerText = currentDialogue.text;
+        updateButtons(currentDialogue.options);
+
+        if(id == "scene0"){
+            tl
+            .add({
+                targets: box,
+                opacity: 1,
+                begin: function(){
+                    box.style.display = "flex";
+                }
+            });
+        }
     }
 }

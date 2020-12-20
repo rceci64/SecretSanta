@@ -83,10 +83,10 @@ var option = (optionNumber) => {
 
 let mainGame = (dialogues) => {
     dialoguesObj = dialogues;
-    currentDialogue = dialoguesObj["santa"]["001"];
-    document.getElementById("dialogueBox").parentElement.style.display = "flex";
-    document.getElementById("dialogueContent").innerText = currentDialogue.text;
-    updateButtons(currentDialogue.options);
+    // currentDialogue = dialoguesObj["santa"]["001"];
+    // document.getElementById("dialogueBox").parentElement.style.display = "flex";
+    // document.getElementById("dialogueContent").innerText = currentDialogue.text;
+    // updateButtons(currentDialogue.options);
     
 }
 

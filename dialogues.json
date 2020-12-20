@@ -186,6 +186,204 @@
                 }
             ]
         }
+    },
+    "bola" : {
+        "001" : {
+            "text" : "Bro...this Christmas doesn't look very good. I fell from the tree earlies this week and my doctor said I will recover in 1 month. I won't shine as other years",
+            "options" : [
+                {
+                    "label" : "You're right. I don't think you can do it.",
+                    "outcome" : {
+                        "npc": "bola",
+                        "affinity" : 0
+                    },
+                    "next" : {
+                        "npc": "bola",
+                        "id": "002" 
+                    }
+                },
+                {
+                    "label" : "I'm sorry to hear that. I hope you get better.",
+                    "outcome" : {
+                        "npc": "bola",
+                        "affinity" : 0.5
+                    },
+                    "next" : {
+                        "npc": "bola",
+                        "id": "003" 
+                    }
+                },
+                {
+                    "label" : "Christmas won't be the same without you...",
+                    "outcome" : {
+                        "npc": "bola",
+                        "affinity" : 1
+                    },
+                    "next" : {
+                        "npc": "bola",
+                        "id": "004" 
+                    }
+                }
+            ]
+        },
+        "002" : {
+            "text" : "...I have things to do.",
+            "options" : [
+                {
+                    "label" : "...",
+                    "outcome" : {
+                        "npc": "mitjo",
+                        "affinity" : 0
+                    },
+                    "next" : {
+                        "npc": "end",
+                        "id": "" 
+                    }
+                }
+            ]
+        },
+        "003" : {
+            "text" : "Thank you...I don't think that many people will miss me.",
+            "options" : [
+                {
+                    "label" : "Don't say that. I think you're essential.",
+                    "outcome" : {
+                        "npc": "bola",
+                        "affinity" : 0.5
+                    },
+                    "next" : {
+                        "npc": "end",
+                        "id": "" 
+                    }
+                },
+                {
+                    "label" : "You're welcome.",
+                    "outcome" : {
+                        "npc": "bola",
+                        "affinity" : -0.5
+                    },
+                    "next" : {
+                        "npc": "end",
+                        "id": "" 
+                    }
+                }
+            ]
+        },
+        "004" : {
+            "text" : "Wow! Thank you very much. I'm gral you're here.",
+            "options" : [
+                {
+                    "label" : "Me too.",
+                    "outcome" : {
+                        "npc": "bola",
+                        "affinity" : 0
+                    },
+                    "next" : {
+                        "npc": "end",
+                        "id": "" 
+                    }
+                }
+            ]
+        }
+    },
+    "pingui" : {
+        "001" : {
+            "text" : "...",
+            "options" : [
+                {
+                    "label" : "Hello?",
+                    "outcome" : {
+                        "npc": "pingui",
+                        "affinity" : 0
+                    },
+                    "next" : {
+                        "npc": "pingui",
+                        "id": "002" 
+                    }
+                },
+                {
+                    "label" : "Sup",
+                    "outcome" : {
+                        "npc": "pingui",
+                        "affinity" : 0
+                    },
+                    "next" : {
+                        "npc": "pingui",
+                        "id": "002" 
+                    }
+                }
+            ]
+        },
+        "002" : {
+            "text" : "...uh, hello? Are you talking to me?",
+            "options" : [
+                {
+                    "label" : "I'm not talking to you. I'm talking to the wall.",
+                    "outcome" : {
+                        "npc": "pingui",
+                        "affinity" : 0
+                    },
+                    "next" : {
+                        "npc": "pingui",
+                        "id": "003" 
+                    }
+                },
+                {
+                    "label" : "How is the issue of hatching the egg going?",
+                    "outcome" : {
+                        "npc": "pingui",
+                        "affinity" : 0.5
+                    },
+                    "next" : {
+                        "npc": "pingui",
+                        "id": "004" 
+                    }
+                }
+            ]
+        },
+        "003" : {
+            "text" : "Why everyone hates me?",
+            "options" : [
+                {
+                    "label" : "...",
+                    "outcome" : {
+                        "npc": "pingui",
+                        "affinity" : 0
+                    },
+                    "next" : {
+                        "npc": "end",
+                        "id": "" 
+                    }
+                }
+            ]
+        },
+        "004" : {
+            "text" : "I haven't been able to tell my parents about it yet. As you know, it's not well seen that a female penguin incubates an egg...",
+            "options" : [
+                {
+                    "label" : "If need any help, just tell me.",
+                    "outcome" : {
+                        "npc": "pingui",
+                        "affinity" : 0.5
+                    },
+                    "next" : {
+                        "npc": "pingui",
+                        "id": "005" 
+                    }
+                },
+                {
+                    "label" : "Of course you don't have to say it ",
+                    "outcome" : {
+                        "npc": "bola",
+                        "affinity" : 0
+                    },
+                    "next" : {
+                        "npc": "end",
+                        "id": "" 
+                    }
+                }
+            ]
+        }
     }
 
     

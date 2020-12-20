@@ -17,7 +17,7 @@
     </head>
     <body>
         <div class="container active" id="menu" style="opacity: 1">
-            <img class="escenari" style="background-color: black;" style="z-index: -4; width: 100%; height: 100%;">
+            <img class="escenari" style="z-index: -4; width: 100%; height: 100%; background-color: rgb(46, 118, 228);">
             <div style="position: absolute; top: 20%; width: 100%; display: inline; font-size: 10vw; color: whitesmoke; text-align: center;">
                 Christmas Game
             </div>
@@ -48,12 +48,13 @@
 
         <div class="container" id="scene2" style="opacity: 0; display: none;">
             <button onclick="loadScene('scene1')" style="position: absolute; height: 50px; top: 30%; left: 80%">(Debug) Load scene 1</button>
+            <img id="examen" src="assets/ui/examenGaletes.svg" style="width: 50%; height: auto; position:absolute; z-index: 50; margin-left: -25%; left: 50%;">
             <img class="escenari" src="assets/escenaris/examen.svg" style="z-index: -4; width: 100%; height: 100%;">
             <img class="npc" id="ninot" src="assets/personatges/ninot_de_neu.png" style="width: 8%; top:40%; left:50%">
         </div>
 
         <div class="container" id="ui" style="pointer-events: none;">
-            <div style="width: 100%; height: 100%; display: flex; justify-content: center;">
+            <div style="width: 100%; height: 100%; display: none; justify-content: center;">
                 <div id="dialogueBox">
                     <div id="dialogueContent">Sample text</div>
                     <div id="buttonsContainer" style="pointer-events: auto;">
