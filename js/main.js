@@ -1,5 +1,6 @@
 var idleAnimation;
 var animation;
+var dialogElement;
 const reader = new FileReader();
 const dialoguesPath = '../dialogues.json';
 let dialoguesObj;
@@ -49,13 +50,9 @@ var option = (optionNumber) => {
     console.log(currentDialogue.options[optionNumber].next.npc);
     if(currentDialogue.options[optionNumber].next.npc != "end" && currentDialogue.options[optionNumber].next.npc != "endScene"){
 
-        let npc = currentDialogue.options[optionNumber].outcome.npc;
+        console.log(currentDialogue.options[optionNumber].outcome.npc)
         // Sumar o restar al sistema d'afinitat
-        if(afinitat[npc] == undefined){
-            afinitat[npc] = 0;
-        }
-        afinitat[npc] += currentDialogue.options[optionNumber].outcome.affinity;
-        console.log(afinitat);
+        //if(afinitat.)
         
         // Reproduir seguent linia de iàleg i actualitzar el botons
         console.log("Option activates next line of text");
@@ -69,11 +66,11 @@ var option = (optionNumber) => {
 
     } else if (currentDialogue.options[optionNumber].next.npc == "end") {
         console.log("Option ends the dialog");
-        document.getElementById("dialogueBox").parentElement.style.display = "none";
+        document.getElementById("dialogueBox").style.display = "none";
         currentDialogue = "ended";
     } else if(currentDialogue.options[optionNumber].next.npc == "endScene") {
         console.log("Option ends the dialog");
-        document.getElementById("dialogueBox").parentElement.style.display = "none";
+        document.getElementById("dialogueBox").style.display = "none";
         currentDialogue = "ended";
         nextScene();
     }
@@ -83,10 +80,10 @@ var option = (optionNumber) => {
 
 let mainGame = (dialogues) => {
     dialoguesObj = dialogues;
-    // currentDialogue = dialoguesObj["santa"]["001"];
-    // document.getElementById("dialogueBox").parentElement.style.display = "flex";
-    // document.getElementById("dialogueContent").innerText = currentDialogue.text;
-    // updateButtons(currentDialogue.options);
+    currentDialogue = dialoguesObj["santa"]["001"];
+    document.getElementById("dialogueBox").style.display = "";
+    document.getElementById("dialogueContent").innerText = currentDialogue.text;
+    updateButtons(currentDialogue.options);
     
 }
 
@@ -98,6 +95,18 @@ let updateButtons = (options) => {
     });
     document.getElementById("buttonsContainer").innerHTML = text;
 };
+
+// let startDialog = (dialogue) => {
+//     //Redundant a la primera crida del joc però més endavant serveix per poder repetir texts
+//     currentDialogue = dialogue;
+//     console.log(currentDialogue.texts[currentText]);
+// }
+
+// let nextText = (npcId) => {
+//     currentText += 1;
+//     console.log(currentDialogue.texts[currentText]);
+// }
+
 
 window.onload = () => {
 
@@ -114,9 +123,9 @@ window.onload = () => {
 
 var startNPCDialog = (idNPC, scene) => {
     console.log(currentDialogue);
-    if(currentDialogue == "ended" || document.getElementById("dialogueBox").parentElement.style.display == "none"){
+    if(currentDialogue == "ended" || document.getElementById("dialogueBox").style.display == "none"){
         currentDialogue = dialoguesObj[idNPC]["001"];
-        document.getElementById("dialogueBox").parentElement.style.display = "flex";
+        document.getElementById("dialogueBox").style.display = "inherit";
         document.getElementById("dialogueContent").innerText = currentDialogue.text;
         updateButtons(currentDialogue.options);
     }

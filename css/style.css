@@ -134,32 +134,36 @@
     padding: 1%;
     width: 90%;
     height: 25%;
+
+
     border-radius: 1vw;
     text-align: justify;
     text-justify: auto;
-    
+    color: rgb(255, 255, 255);
 }
 
 #dialogueContent {
-    overflow-y: scroll;
+    position: relative;
+    overflow-y: hidden;
     scrollbar-color: blue transparent;
     scrollbar-width: thick;
     font-size: 2vw;
-    color: rgb(255, 255, 255);
 }
 
 #buttonsContainer {
    width: 100%;
-   /*background-color: blue;*/
+   position: relative;
+   text-align: center;
    z-index: 2;
    display: flex;
    align-items: center;
-   margin-top: 1%;
+   margin-top: 2%;
 }
 
 .optionButtons {
     height: 100%;
     width: 20%;
+    margin: 0 1%;
     margin: 0 1%;
     border-radius: 1vw;
     font-family: 'Nerko One';
@@ -169,6 +173,23 @@
     background-color: rgb(21, 168, 124);
     border: 2px solid palegoldenrod;
     text-align: start;
+    cursor: pointer;
+}
+
+.settingsButton {
+    position: absolute;
+    z-index: 2;
+    top: 2%;
+    right: 1%;
+    border-radius: 1vw;
+    font-family: 'Nerko One';
+    color: palegoldenrod;
+    font-size: 1.3vw;
+    padding: 1%;
+    background-color: rgb(21, 168, 124);
+    border: 2px solid palegoldenrod;
+    text-align: start;
+    cursor: pointer;
 }
 
 html, body {
