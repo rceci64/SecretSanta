@@ -49,9 +49,13 @@ var option = (optionNumber) => {
     console.log(currentDialogue.options[optionNumber].next.npc);
     if(currentDialogue.options[optionNumber].next.npc != "end" && currentDialogue.options[optionNumber].next.npc != "endScene"){
 
-        console.log(currentDialogue.options[optionNumber].outcome.npc)
+        let npc = currentDialogue.options[optionNumber].outcome.npc;
         // Sumar o restar al sistema d'afinitat
-        //if(afinitat.)
+        if(afinitat[npc] == undefined){
+            afinitat[npc] = 0;
+        }
+        afinitat[npc] += currentDialogue.options[optionNumber].outcome.affinity;
+        console.log(afinitat);
         
         // Reproduir seguent linia de iàleg i actualitzar el botons
         console.log("Option activates next line of text");
@@ -94,18 +98,6 @@ let updateButtons = (options) => {
     });
     document.getElementById("buttonsContainer").innerHTML = text;
 };
-
-// let startDialog = (dialogue) => {
-//     //Redundant a la primera crida del joc però més endavant serveix per poder repetir texts
-//     currentDialogue = dialogue;
-//     console.log(currentDialogue.texts[currentText]);
-// }
-
-// let nextText = (npcId) => {
-//     currentText += 1;
-//     console.log(currentDialogue.texts[currentText]);
-// }
-
 
 window.onload = () => {
 
