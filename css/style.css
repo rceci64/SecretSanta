@@ -126,17 +126,15 @@
 }
 
 #dialogueBox {
-    background-color: rgba(255, 157, 77, 0.575);
+    background-color: rgba(230, 55, 55, 0.527);
     z-index: 1;
     visibility: visible;
     position: absolute;
     bottom: 0;
     padding: 1%;
     width: 90%;
-    height: 20%;
-
-
-    border-radius: 1%;
+    height: 25%;
+    border-radius: 1vw;
     text-align: justify;
     text-justify: auto;
     
@@ -146,22 +144,31 @@
     overflow-y: scroll;
     scrollbar-color: blue transparent;
     scrollbar-width: thick;
-    font-size: 4vw;
+    font-size: 2vw;
+    color: rgb(255, 255, 255);
 }
 
 #buttonsContainer {
-   height: 35%;
    width: 100%;
-   background-color: blue;
-   position: relative;
-   top: 70%;
-   text-align: center;
+   /*background-color: blue;*/
+   z-index: 2;
+   display: flex;
+   align-items: center;
+   margin-top: 1%;
 }
 
 .optionButtons {
     height: 100%;
     width: 20%;
     margin: 0 1%;
+    border-radius: 1vw;
+    font-family: 'Nerko One';
+    color: palegoldenrod;
+    font-size: 1.3vw;
+    padding: 1%;
+    background-color: rgb(21, 168, 124);
+    border: 2px solid palegoldenrod;
+    text-align: start;
 }
 
 html, body {

@@ -6,6 +6,7 @@ let dialoguesObj;
 var currentDialogue;
 let currentText = 0;
 var stopSnowOnLoadNextScene = false;
+var afinitat = {};
 
 let startSnow = () => {
     snowStorm.flakesMax = 256;
@@ -44,22 +45,37 @@ async function loadJSONRoger (path) {
 };
 
 var option = (optionNumber) => {
-    console.log("Option clicked: ", optionNumber);
-    if(currentDialogue.options[optionNumber].next.npc != "end"){
+    //console.log("Option clicked: ", optionNumber);
+    console.log(currentDialogue.options[optionNumber].next.npc);
+    if(currentDialogue.options[optionNumber].next.npc != "end" && currentDialogue.options[optionNumber].next.npc != "endScene"){
+
+        let npc = currentDialogue.options[optionNumber].outcome.npc;
+        // Sumar o restar al sistema d'afinitat
+        if(afinitat[npc] == undefined){
+            afinitat[npc] = 0;
+        }
+        afinitat[npc] += currentDialogue.options[optionNumber].outcome.affinity;
+        console.log(afinitat);
         
+        // Reproduir seguent linia de iàleg i actualitzar el botons
         console.log("Option activates next line of text");
         var currentNext = currentDialogue.options[optionNumber].next;
         console.log(currentNext);
         let nextItem = dialoguesObj[currentNext.npc][currentNext.id];
         currentDialogue = nextItem;
-        //console.log(currentDialogue);
         document.getElementById("dialogueContent").innerText = currentDialogue.text;
         updateButtons(currentDialogue.options);
 
-        
-    } else {
+
+    } else if (currentDialogue.options[optionNumber].next.npc == "end") {
         console.log("Option ends the dialog");
-        document.getElementById("dialogueBox").style.display = "none";
+        document.getElementById("dialogueBox").parentElement.style.display = "none";
+        currentDialogue = "ended";
+    } else if(currentDialogue.options[optionNumber].next.npc == "endScene") {
+        console.log("Option ends the dialog");
+        document.getElementById("dialogueBox").parentElement.style.display = "none";
+        currentDialogue = "ended";
+        nextScene();
     }
 
 };
@@ -67,10 +83,10 @@ var option = (optionNumber) => {
 
 let mainGame = (dialogues) => {
     dialoguesObj = dialogues;
-    currentDialogue = dialoguesObj["santa"]["001"];
-    document.getElementById("dialogueBox").style.display = "";
-    document.getElementById("dialogueContent").innerText = currentDialogue.text;
-    updateButtons(currentDialogue.options);
+    // currentDialogue = dialoguesObj["santa"]["001"];
+    // document.getElementById("dialogueBox").parentElement.style.display = "flex";
+    // document.getElementById("dialogueContent").innerText = currentDialogue.text;
+    // updateButtons(currentDialogue.options);
     
 }
 
@@ -83,41 +99,28 @@ let updateButtons = (options) => {
     document.getElementById("buttonsContainer").innerHTML = text;
 };
 
-// let startDialog = (dialogue) => {
-//     //Redundant a la primera crida del joc però més endavant serveix per poder repetir texts
-//     currentDialogue = dialogue;
-//     console.log(currentDialogue.texts[currentText]);
-// }
-
-// let nextText = (npcId) => {
-//     currentText += 1;
-//     console.log(currentDialogue.texts[currentText]);
-// }
-
-
 window.onload = () => {
 
+    
     loadJSON(dialoguesPath,
-         function(data) { console.log(data); mainGame(data); },
-         function(xhr) { console.error(xhr); }
+        function(data) { console.log(data); mainGame(data); },
+        function(xhr) { console.error(xhr); }
     );
-
+        
     startSnow();
     loadAnimations();
-    //loadDialogues();
+    loadNPCListeners();
 };
 
-// function loadDialogues(){
-    
-//     var npcs = document.querySelectorAll(".npc");
-//     npcs.forEach(element => {
-//         element.addEventListener("click", function(){
-//             console.log(this.id, "talked");
-//             // Reproduce line of dialogue
-//             nextText(this.id);
-//         });
-//     });
-// }
+var startNPCDialog = (idNPC, scene) => {
+    console.log(currentDialogue);
+    if(currentDialogue == "ended" || document.getElementById("dialogueBox").parentElement.style.display == "none"){
+        currentDialogue = dialoguesObj[idNPC]["001"];
+        document.getElementById("dialogueBox").parentElement.style.display = "flex";
+        document.getElementById("dialogueContent").innerText = currentDialogue.text;
+        updateButtons(currentDialogue.options);
+    }
+};
 
 
 

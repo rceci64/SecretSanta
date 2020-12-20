@@ -17,54 +17,54 @@
     </head>
     <body>
         <div class="container active" id="menu" style="opacity: 1">
-            <img class="escenari" style="background-color: black;" style="z-index: -4; width: 100%; height: 100%;">
+            <img class="escenari" style="z-index: -4; width: 100%; height: 100%; background-color: rgb(46, 118, 228);">
             <div style="position: absolute; top: 20%; width: 100%; display: inline; font-size: 10vw; color: whitesmoke; text-align: center;">
                 Christmas Game
             </div>
-            <button onclick="loadScene('scene1')" class="menuButton" style="top: 50%; left: 50%; font-size: 3vw; display: inline; color: whitesmoke">Play</button>
+            <button onclick="loadScene('scene0')" class="menuButton" style="top: 50%; left: 50%; font-size: 3vw; display: inline; color: whitesmoke">Play</button>
+        </div>
+
+        <div class="container" id="scene0" style="opacity: 0; display: none">
+            <button onclick="loadScene('scene1')" style="position: absolute; height: 50px; top: 30%; left: 80%">(Debug) Load scene 1</button>
+            <img class="escenari" src="assets/escenaris/Passadis.svg" style="z-index: -4; width: 100%; height: 100%;">
+
+            <img class="npc" id="santa" src="assets/personatges/santa_1.png" style="width: 15%; top:40%; left:50%; margin-left: -7.5%;">
+
+            
+
         </div>
 
         <div class="container" id="scene1" style="opacity: 0; display: none">
+            <button onclick="loadScene('scene0')" style="position: absolute; height: 50px; top: 10%; left: 80%">(Debug) Load scene 0</button>
             <button onclick="loadScene('scene2')" style="position: absolute; height: 50px; top: 30%; left: 80%">(Debug) Load scene 2</button>
             <img class="escenari" src="assets/escenaris/Passadis.svg" style="z-index: -4; width: 100%; height: 100%;">
-
-        
 
             <img class="npc" id="bola" src="assets/personatges/bola.svg" style="width: 8%; top:20%; left:35%">
             <img class="npc" id="canya" src="assets/personatges/canya.svg" style="width: 8%; top:10%; left:60%">
             <img class="npc" id="mitjo" src="assets/personatges/mitjo.svg" style="width: 10%; top:50%; left:30%">
-            <!-- <img class="npc" id="pingui" src="assets/personatges/pingui.svg" style="top:50%; left:15%"> -->
+            <img class="npc" id="pingui" src="assets/personatges/pingui.svg" style="width: 7%; top:50%; left:60%">
 
+        </div>
 
+        <div class="container" id="scene2" style="opacity: 0; display: none;">
+            <button onclick="loadScene('scene1')" style="position: absolute; height: 50px; top: 30%; left: 80%">(Debug) Load scene 1</button>
+            <img id="examen" src="assets/ui/examenGaletes.svg" style="width: 50%; height: auto; position:absolute; z-index: 50; margin-left: -25%; left: 50%;">
+            <img class="escenari" src="assets/escenaris/examen.svg" style="z-index: -4; width: 100%; height: 100%;">
+            <img class="npc" id="ninot" src="assets/personatges/ninot_de_neu.png" style="width: 8%; top:40%; left:50%">
+        </div>
 
-            <!-- <img class="npc" id="arbre" src="assets/personatges/Arbre_De_Nadal.png"  style="top:30%; left:60%">
-            <img class="npc" id="bola" src="assets/personatges/bola.png" style="top:50%; left:15%">
-            <img class="npc" id="canya" src="assets/personatges/canya_de_sucre.png" style="top:25%; left:25%">
-            <img class="npc" id="galeta" src="assets/personatges/galeta.png" style="top:35%; left:17%">
-            <img class="npc" id="mitjo" src="assets/personatges/mitjo.png" style="top:20%; left:45%">
-            <img class="npc" id="ninot" src="assets/personatges/ninot_de_neu.png" style="top:15%; left:35%">
-            <img class="player npc" id="player" src="assets/personatges/player.png" style="top:45%; left:42%">
-            <img class="npc" id="sac" src="assets/personatges/Sac_De_Nadal.png" style="top:55%; left:70%">
-            <img class="npc" id="trineu" src="assets/personatges/Trineu.png" style="top:25%; left:53%"> -->
-
-            <div style="z-index: -3; width: 100%; height: 100%; opacity: 0.5; display: flex; justify-content: center; pointer-events: none;">
+        <div class="container" id="ui" style="pointer-events: none;">
+            <div style="width: 100%; height: 100%; display: none; justify-content: center;">
                 <div id="dialogueBox">
                     <div id="dialogueContent">Sample text</div>
-                    <!-- <div id="buttonsContainer">
+                    <div id="buttonsContainer" style="pointer-events: auto;">
                         <button id="option1" onclick="option(0)" class="optionButtons">Option 1</button>
                         <button id="option2" onclick="option(1)" class="optionButtons">Option 2</button>
                         <button id="option3" onclick="option(2)" class="optionButtons">Option 3</button>
                         <button id="option4" onclick="option(3)" class="optionButtons">Option 4</button>
-                    </div> -->
+                    </div>
                 </div>
             </div>
-
-
-        </div>
-        <div class="container" id="scene2" style="opacity: 0; display: none;">
-            <button onclick="loadScene('scene1')" style="position: absolute; height: 50px; top: 30%; left: 80%">(Debug) Load scene 1</button>
-            <img class="escenari" src="assets/escenaris/examen.svg" style="z-index: -4; width: 100%; height: 100%;">
-            <img class="npc" id="ninot" src="assets/personatges/ninot_de_neu.png" style="width: 8%; top:40%; left:50%">
         </div>
     </body>
 </html>
