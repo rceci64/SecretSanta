@@ -122,7 +122,7 @@ window.onload = () => {
 
 var startNPCDialog = (idNPC, scene) => {
     console.log(currentDialogue);
-    if(currentDialogue == "ended"){
+    if(currentDialogue == "ended" || document.getElementById("dialogueBox").parentElement.style.display == "none"){
         currentDialogue = dialoguesObj[idNPC]["001"];
         document.getElementById("dialogueBox").parentElement.style.display = "flex";
         document.getElementById("dialogueContent").innerText = currentDialogue.text;

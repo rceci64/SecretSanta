@@ -150,13 +150,11 @@
 }
 
 #buttonsContainer {
-   height: 35%;
    width: 100%;
    background-color: blue;
-   position: relative;
-   top: 70%;
-   text-align: center;
    z-index: 2;
+   display: flex;
+   align-items: center;
 }
 
 .optionButtons {
