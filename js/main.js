@@ -2,7 +2,7 @@ var idleAnimation;
 var animation;
 var dialogElement;
 const reader = new FileReader();
-const dialoguesPath = '/dialogues.json';
+const dialoguesPath = 'dialogues.json';
 let dialoguesObj;
 var currentDialogue;
 let currentText = 0;
