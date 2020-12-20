@@ -54,8 +54,18 @@
             <img class="npc" id="mitjo" src="assets/personatges/mitjo.svg" style="width: 10%; top:50%; left:30%">
             <img class="npc" id="pingui" src="assets/personatges/pingui.svg" style="width: 7%; top:50%; left:60%">
 
-            <div style="z-index: -3; width: 100%; height: 100%; display: flex; justify-content: center;">
-                <div class="dialogueBox" style="display: none;">
+        </div>
+
+        <div class="container" id="scene2" style="opacity: 0; display: none;">
+            <button onclick="loadScene('scene1')" style="position: absolute; height: 50px; top: 30%; left: 80%">(Debug) Load scene 1</button>
+            <img id="examen" src="assets/ui/examenGaletes.svg" style="width: 50%; height: auto; position:absolute; z-index: 50; margin-left: -25%; left: 50%;">
+            <img class="escenari" src="assets/escenaris/examen.svg" style="z-index: -4; width: 100%; height: 100%;">
+            <img class="npc" id="ninot" src="assets/personatges/ninot_de_neu.png" style="width: 8%; top:40%; left:50%">
+        </div>
+
+        <div class="container" id="ui" style="pointer-events: none;">
+            <div style="width: 100%; height: 100%;" style="pointer-events: none;">
+                <div id="dialogueBox" style="display: none;">
                     <div id="dialogueContent">Sample text</div>
                     <div id="buttonsContainer">
                         <button id="option1" onclick="option(0)" class="optionButtons">Option 1</button>
@@ -63,6 +73,10 @@
                         <button id="option3" onclick="option(2)" class="optionButtons">Option 3</button>
                         <button id="option4" onclick="option(3)" class="optionButtons">Option 4</button>
                     </div>
+                </div>
+
+                <div id="settings" style="pointer-events: auto;">
+                    <button id="optionButton" onclick="toggleSettings()" class="settingsButton">Settings</button>
                 </div>
             </div>
 

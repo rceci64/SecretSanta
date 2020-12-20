@@ -1,5 +1,6 @@
 var idleAnimation;
 var animation;
+var dialogElement;
 const reader = new FileReader();
 const dialoguesPath = '../dialogues.json';
 let dialoguesObj;
@@ -122,9 +123,15 @@ window.onload = () => {
 
 var startNPCDialog = (idNPC, scene) => {
     console.log(currentDialogue);
+<<<<<<< Updated upstream
     if(currentDialogue == "ended"){
         currentDialogue = dialoguesObj[idNPC]["001"];
         document.getElementById("dialogueBox").style.display = "";
+=======
+    if(currentDialogue == "ended" || document.getElementById("dialogueBox").style.display == "none"){
+        currentDialogue = dialoguesObj[idNPC]["001"];
+        document.getElementById("dialogueBox").style.display = "inherit";
+>>>>>>> Stashed changes
         document.getElementById("dialogueContent").innerText = currentDialogue.text;
         updateButtons(currentDialogue.options);
     }

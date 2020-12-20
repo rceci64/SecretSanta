@@ -139,10 +139,10 @@
     border-radius: 1vw;
     text-align: justify;
     text-justify: auto;
-    
 }
 
 #dialogueContent {
+    position: relative;
     overflow-y: scroll;
     scrollbar-color: blue transparent;
     scrollbar-width: thick;
@@ -163,6 +163,34 @@
     height: 100%;
     width: 20%;
     margin: 0 1%;
+<<<<<<< Updated upstream
+=======
+    border-radius: 1vw;
+    font-family: 'Nerko One';
+    color: palegoldenrod;
+    font-size: 1.3vw;
+    padding: 1%;
+    background-color: rgb(21, 168, 124);
+    border: 2px solid palegoldenrod;
+    text-align: start;
+    cursor: pointer;
+}
+
+.settingsButton {
+    position: absolute;
+    z-index: 2;
+    top: 2%;
+    right: 1%;
+    border-radius: 1vw;
+    font-family: 'Nerko One';
+    color: palegoldenrod;
+    font-size: 1.3vw;
+    padding: 1%;
+    background-color: rgb(21, 168, 124);
+    border: 2px solid palegoldenrod;
+    text-align: start;
+    cursor: pointer;
+>>>>>>> Stashed changes
 }
 
 html, body {
