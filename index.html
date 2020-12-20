@@ -17,7 +17,7 @@
     </head>
     <body>
         <div class="container active" id="menu" style="opacity: 1">
-            <img class="escenari" style="background-color: black;" style="z-index: -4; width: 100%; height: 100%;">
+            <img class="escenari" style="z-index: -4; width: 100%; height: 100%; background-color: rgb(46, 118, 228);">
             <div style="position: absolute; top: 20%; width: 100%; display: inline; font-size: 10vw; color: whitesmoke; text-align: center;">
                 Christmas Game
             </div>
@@ -30,17 +30,7 @@
 
             <img class="npc" id="santa" src="assets/personatges/santa_1.png" style="width: 15%; top:40%; left:50%; margin-left: -7.5%;">
 
-            <div style="z-index: -3; width: 100%; height: 100%; display: flex; justify-content: center;">
-                <div class="dialogueBox">
-                    <div id="dialogueContent">Sample text</div>
-                    <div id="buttonsContainer">
-                        <button id="option1" onclick="option(0)" class="optionButtons">Option 1</button>
-                        <button id="option2" onclick="option(1)" class="optionButtons">Option 2</button>
-                        <button id="option3" onclick="option(2)" class="optionButtons">Option 3</button>
-                        <button id="option4" onclick="option(3)" class="optionButtons">Option 4</button>
-                    </div>
-                </div>
-            </div>
+            
 
         </div>
 
@@ -67,7 +57,7 @@
             <div style="width: 100%; height: 100%;" style="pointer-events: none;">
                 <div id="dialogueBox" style="display: none;">
                     <div id="dialogueContent">Sample text</div>
-                    <div id="buttonsContainer">
+                    <div id="buttonsContainer" style="pointer-events: auto;">
                         <button id="option1" onclick="option(0)" class="optionButtons">Option 1</button>
                         <button id="option2" onclick="option(1)" class="optionButtons">Option 2</button>
                         <button id="option3" onclick="option(2)" class="optionButtons">Option 3</button>
@@ -79,13 +69,6 @@
                     <button id="optionButton" onclick="toggleSettings()" class="settingsButton">Settings</button>
                 </div>
             </div>
-
-        </div>
-
-        <div class="container" id="scene2" style="opacity: 0; display: none;">
-            <button onclick="loadScene('scene1')" style="position: absolute; height: 50px; top: 30%; left: 80%">(Debug) Load scene 1</button>
-            <img class="escenari" src="assets/escenaris/examen.svg" style="z-index: -4; width: 100%; height: 100%;">
-            <img class="npc" id="ninot" src="assets/personatges/ninot_de_neu.png" style="width: 8%; top:40%; left:50%">
         </div>
     </body>
 </html>

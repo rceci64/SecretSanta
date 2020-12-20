@@ -86,11 +86,6 @@ function loadScene(id){
                 hidden.className = "container active";
             }
         });
-<<<<<<< Updated upstream
-
-=======
-        
->>>>>>> Stashed changes
         document.getElementById("dialogueBox").style.display = "none";
     }
 }

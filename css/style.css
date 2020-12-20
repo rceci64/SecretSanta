@@ -163,8 +163,6 @@
     height: 100%;
     width: 20%;
     margin: 0 1%;
-<<<<<<< Updated upstream
-=======
     border-radius: 1vw;
     font-family: 'Nerko One';
     color: palegoldenrod;
@@ -190,7 +188,6 @@
     border: 2px solid palegoldenrod;
     text-align: start;
     cursor: pointer;
->>>>>>> Stashed changes
 }
 
 html, body {
