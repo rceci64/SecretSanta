@@ -144,7 +144,7 @@
 
 #dialogueContent {
     position: relative;
-    overflow-y: scroll;
+    overflow-y: hidden;
     scrollbar-color: blue transparent;
     scrollbar-width: thick;
     font-size: 2vw;
