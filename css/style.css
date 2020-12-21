@@ -66,7 +66,7 @@
     /*filter: invert(99%) sepia(0%) saturate(0%) hue-rotate(310deg) brightness(102%) contrast(102%);*/
 }
 
-.menuButton {
+#playButton {
     height: 50px;
     margin-top: -25px;
     width: 140px;
@@ -74,6 +74,54 @@
     background:none;
     border:none;
     position: absolute;
+    top: 85%;
+    left: 50%;
+    font-size: 3.5vw;
+    display: inline;
+    color: whitesmoke;
+    font-family: inherit;
+    cursor: pointer;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+#playButton:hover {
+    filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12,Color='#444')";
+    filter: url(#drop-shadow);
+    -webkit-filter: drop-shadow(0 0 4px rgb(255, 255, 255));
+    filter: drop-shadow(0 0 4px rgb(255, 255, 255));
+    transition: .1s ease-in-out;
+}
+
+#nameInput {
+    height: auto;
+    margin-top: auto;
+    width: 60%;
+    margin-left: -30%;
+    background: whitesmoke;
+    border:none;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    font-size: 2.5vw;
+    color: black;
+    border-radius: 0.3vw;
+    font-family: inherit;
+    padding: 0.5%;
+}
+
+#labelName {
+    height: auto;
+    margin-top: auto;
+    width: 60%;
+    margin-left: -30%;
+    border:none;
+    position: absolute;
+    top: 63%;
+    left: 50%;
+    font-size: 2.5vw;
+    color: whitesmoke;
+    border-radius: 0.3vw;
 }
 
 .square {
@@ -134,12 +182,12 @@
     padding: 1%;
     width: 90%;
     height: 25%;
-
-
     border-radius: 1vw;
     text-align: justify;
     text-justify: auto;
     color: rgb(255, 255, 255);
+    display: none;
+    opacity: 0;
 }
 
 #dialogueContent {

@@ -6,34 +6,38 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet"> 
         <link href="css/style.css" rel="stylesheet">
-        <!-- <link href="css/test.css" rel="stylesheet">  -->
         <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js"></script>
         <script src="js/snowstorm-min.js"></script>
         <script src="js/main.js"></script>
-        <script src="js/animations.js"></script>
+        <script src="js/manager.js"></script>
         <script src="js/music.js"></script>
-        <script src="js/dialogSystem.js"></script>
     </head>
     <body>
+
+        <!----------------------------  Main menu scene  ---------------------------->
         <div class="container active" id="menu" style="opacity: 1">
             <img class="escenari" style="z-index: -4; width: 100%; height: 100%; background-color: rgb(46, 118, 228);">
             <div style="position: absolute; top: 20%; width: 100%; display: inline; font-size: 10vw; color: whitesmoke; text-align: center;">
                 Christmas Game
             </div>
-            <button onclick="loadScene('scene0')" class="menuButton" style="top: 50%; left: 50%; font-size: 3vw; display: inline; color: whitesmoke">Play</button>
+            <label id="labelName" for="nameInput">What's your name?</label>
+            <input id="nameInput" oninput="changeButtonState(this)" name="nameInput" type="text" value="">
+            <button disabled onclick="startGame()" id="playButton">Play</button>
         </div>
+        
 
+        <!--------------------------  Santa first scene  -------------------------->
         <div class="container" id="scene0" style="opacity: 0; display: none">
             <button onclick="loadScene('scene1')" style="position: absolute; height: 50px; top: 30%; left: 80%">(Debug) Load scene 1</button>
+
             <img class="escenari" src="assets/escenaris/Passadis.svg" style="z-index: -4; width: 100%; height: 100%;">
 
             <img class="npc" id="santa" src="assets/personatges/santa_1.png" style="width: 15%; top:40%; left:50%; margin-left: -7.5%;">
-
-            
-
         </div>
 
+
+        <!--------------------------  Passadís 1 escena  ------------------------->
         <div class="container" id="scene1" style="opacity: 0; display: none">
             <button onclick="loadScene('scene0')" style="position: absolute; height: 50px; top: 10%; left: 80%">(Debug) Load scene 0</button>
             <button onclick="loadScene('scene2')" style="position: absolute; height: 50px; top: 30%; left: 80%">(Debug) Load scene 2</button>
@@ -46,6 +50,7 @@
 
         </div>
 
+        <!---------------------------  Examen 1 escena  ------------------------->
         <div class="container" id="scene2" style="opacity: 0; display: none;">
             <button onclick="loadScene('scene1')" style="position: absolute; height: 50px; top: 30%; left: 80%">(Debug) Load scene 1</button>
             <img id="examen" src="assets/ui/examenGaletes.svg" style="width: 50%; height: auto; position:absolute; z-index: 50; margin-left: -25%; left: 50%;">
@@ -53,9 +58,13 @@
             <img class="npc" id="ninot" src="assets/personatges/ninot_de_neu.png" style="width: 8%; top:40%; left:50%">
         </div>
 
+
+        <!----------- Container UI (dialogue buttons and settings) ------------->
         <div class="container" id="ui" style="pointer-events: none;">
             <div style="width: 100%; height: 100%;" style="pointer-events: none;">
-                <div id="dialogueBox" style="display: none;">
+
+
+                <div id="dialogueBox">
                     <div id="dialogueContent">Sample text</div>
                     <div id="buttonsContainer" style="pointer-events: auto;">
                         <button id="option1" onclick="option(0)" class="optionButtons">Option 1</button>
@@ -68,7 +77,12 @@
                 <div id="settings" style="pointer-events: auto;">
                     <button id="optionButton" onclick="toggleSettings()" class="settingsButton">Settings</button>
                 </div>
+
             </div>
         </div>
+
+
+
+
     </body>
 </html>
