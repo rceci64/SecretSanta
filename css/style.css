@@ -139,18 +139,26 @@
     position: absolute;
     /* top: 50%;
     left: 35%; */
-    z-index: 0;
+    z-index: -2;
     transform-origin: bottom;
     /*border-radius: 5px;*/
     border: black;
 }
 
-#galeta {
-    z-index: -3;
-}
-
 .escenari {
     position: absolute;
+}
+
+.cadira {
+    position: absolute;
+    z-index: -3;
+    margin-left: -7%;
+}
+
+.taula {
+    position: absolute;
+    z-index: -1;
+    margin-left: -12%;
 }
 
 #taquilla {
