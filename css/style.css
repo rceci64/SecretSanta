@@ -187,6 +187,8 @@
     text-justify: auto;
     color: rgb(255, 255, 255);
     display: none;
+    margin-left: -45%;
+    left: 50%;
     opacity: 0;
 }
 
