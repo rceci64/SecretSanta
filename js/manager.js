@@ -133,3 +133,38 @@ function hideDialogue(){
 function randomInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
+function openExam(){
+    console.log("open exam");
+    examElement = document.getElementById("examen");
+
+    anime({
+        targets: examElement,
+        scale: 10,
+        begin: function (){
+            examElement.style.display = "";
+            examElement.insertAdjacentHTML('afterend', '<div class="surface" onclick="closeExam()" style="z-index: 49; background-color: gray; opacity: 0.5; position: absolute; width: 100%; height: 100%;"></div>');
+            
+        }
+
+    });
+
+}
+
+function closeExam(){
+    console.log("close exam");
+
+    examElement = document.getElementById("examen");
+
+    anime({
+        targets: examElement,
+        scale: 1,
+        complete: function (){
+            examElement.style.display = "none";
+            document.querySelector(".surface").remove();
+            
+        }
+
+    });
+
+}

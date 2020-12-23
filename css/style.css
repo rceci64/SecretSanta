@@ -153,12 +153,22 @@
     position: absolute;
     z-index: -3;
     margin-left: -7%;
+    pointer-events: none;
 }
 
 .taula {
     position: absolute;
     z-index: -1;
     margin-left: -12%;
+    pointer-events: none;
+}
+
+.surface {
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
 }
 
 #taquilla {
