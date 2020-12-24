@@ -47,4 +47,4 @@ var lastSong = null;
 var currentSong = loseMusic;
 
 mainMusic.play();
-
+changeVolume(0.1);

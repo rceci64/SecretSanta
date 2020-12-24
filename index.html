@@ -12,6 +12,7 @@
         <script src="js/main.js"></script>
         <script src="js/manager.js"></script>
         <script src="js/music.js"></script>
+        <script src="js/settings.js"></script>
     </head>
     <body>
 
@@ -118,8 +119,16 @@
                     </div>
                 </div>
 
-                <div id="settings" style="pointer-events: auto;">
+                <div style="pointer-events: auto;">
                     <button id="optionButton" onclick="toggleSettings()" class="settingsButton">Settings</button>
+                </div>
+
+                <div id="settingsContainer" class="settingsContainer" style="pointer-events: auto; display: none; z-index: 3;">
+                    <div id="settingsMenu" class="settingsMenu">
+                        <p id="volumeLabel">Volume (10%)</p>
+                        <input type="range" min="0" max="100" value="10" class="slider" id="volumeRange" oninput="sliderChange()">
+                        <p>Made by Roger Cecília, Marc, Marcel and Gerard Parareda</p>
+                    </div>
                 </div>
 
             </div>

@@ -186,8 +186,8 @@
 .npc:hover {
     filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12,Color='#444')";
     filter: url(#drop-shadow);
-    -webkit-filter: drop-shadow(0 0 4px rgba(24, 201, 255, 0.747));
-    filter: drop-shadow(0 0 4px rgba(24, 201, 255, 0.747));
+    -webkit-filter: drop-shadow(0 0 6px rgba(24, 201, 255, 0.747));
+    filter: drop-shadow(0 0 6px rgba(24, 201, 255, 0.747));
     transition: .2s ease-in-out;
 }
 
@@ -242,6 +242,20 @@
     border: 2px solid palegoldenrod;
     text-align: start;
     cursor: pointer;
+    
+    /* Transition on hover leave */
+    -webkit-filter: none;
+    filter: none;
+    transition: .50s ease-in-out;
+}
+
+.optionButtons:hover,
+.settingsButton:hover {
+    filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12,Color='#444')";
+    filter: url(#drop-shadow);
+    -webkit-filter: drop-shadow(0 0 4px rgba(251, 255, 24, 0.747));
+    filter: drop-shadow(0 0 4px rgba(251, 255, 24, 0.747));
+    transition: .2s ease-in-out;
 }
 
 .settingsButton {
@@ -258,7 +272,55 @@
     border: 2px solid palegoldenrod;
     text-align: start;
     cursor: pointer;
+
+    /* Transition on hover leave */
+    -webkit-filter: none;
+    filter: none;
+    transition: .50s ease-in-out;
 }
+
+.settingsContainer {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 25%;
+    left: 25%;
+    display: none;
+}
+
+.settingsMenu {
+    width: 50%;
+    height: 50%;
+    background-color: rgba(230, 55, 55, 1);
+    border-radius: 25px;
+    border: 5px solid palegoldenrod;
+    color: white;
+    text-align: center;
+    font-size: 3vw;
+}
+
+.slider {
+    width: 75%;
+    height: 25px;
+    background: white;
+    outline: none;
+    border-radius: 5px;
+}
+
+.slider::-webkit-slider-thumb {
+    width: 25px;
+    height: 25px;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
 
 html, body {
     font-family: 'Nerko One', cursive;
