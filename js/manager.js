@@ -141,6 +141,7 @@ function openExam(){
     anime({
         targets: examElement,
         scale: 10,
+        translateY: -10,
         begin: function (){
             examElement.style.display = "";
             examElement.insertAdjacentHTML('afterend', '<div class="surface" onclick="closeExam()" style="z-index: 49; background-color: gray; opacity: 0.5; position: absolute; width: 100%; height: 100%;"></div>');
@@ -159,6 +160,9 @@ function closeExam(){
     anime({
         targets: examElement,
         scale: 1,
+        translateY: 10,
+        easing: 'easeInOutQuad',
+        duration: 200,
         complete: function (){
             examElement.style.display = "none";
             document.querySelector(".surface").remove();

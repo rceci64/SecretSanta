@@ -86,7 +86,7 @@ let option = (optionNumber) => {
 
 let mainGame = (dialogues) => {
     dialoguesObj = dialogues;
-    //loadScene('scene2');
+    loadScene('scene2');
     //currentDialogue = dialoguesObj["santa"]["001"];
     //document.getElementById("dialogueBox").style.display = "";
     // document.getElementById("dialogueContent").innerText = currentDialogue.text;
