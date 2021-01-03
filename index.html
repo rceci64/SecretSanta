@@ -54,6 +54,7 @@
         <!---------------------------  Examen 1 escena  ------------------------->
         <div class="container" id="scene2" style="opacity: 0; display: none;">
             <button onclick="loadScene('scene1')" style="position: absolute; height: 50px; top: 30%; left: 80%">(Debug) Load scene 1</button>
+            <button onclick="loadQuestions(0)" style="position: absolute; height: 50px; top: 50%; left: 80%">(Debug) Load exam questions</button>
             
             
             <!-- Taules i cadires -->
@@ -92,7 +93,11 @@
             <img class="minitest" src="assets/escenaris/minitest.svg" style="position: absolute; width: 3%; top:81.8%; left:68%; margin-left: -1.5%; z-index: 99">
             
             
-            <img id="examen" src="assets/ui/examenGaletes.svg" style="width: 3.5%; height: auto; position:absolute; z-index: 100; margin-left: -1.75%; left: 50%; top: 61.5%; display: none;">
+            <img id="examen" src="assets/ui/examenGaletes.svg" style="width: 3.5%; height: auto; position: absolute; z-index: 100; margin-left: -1.75%; left: 50%; top: 61.5%; display: none">
+            <div id="examContent">
+                <div id="examName" style="position: absolute; top: 24.5%; left: 39%;">Roger</div>
+                <div id="examQuestions"></div>
+            </div>
 
             <img class="npc" id="bola" src="assets/personatges/bola.svg" style="z-index: 9; width: 8%; top:71%; left:27.5%">
             <img class="npc" id="sac" src="assets/personatges/sac.svg" style="width: 10%; top:48%; left:63%">

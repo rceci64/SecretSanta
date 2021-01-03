@@ -141,10 +141,10 @@ function openExam(){
     anime({
         targets: examElement,
         scale: 10,
-        translateY: -10,
+        translateY: "-20%",
         begin: function (){
             examElement.style.display = "";
-            examElement.insertAdjacentHTML('afterend', '<div class="surface" onclick="closeExam()" style="z-index: 49; background-color: gray; opacity: 0.5; position: absolute; width: 100%; height: 100%;"></div>');
+            examElement.insertAdjacentHTML('afterend', '<div class="surface" onclick="closeExam()" style="z-index: 99; background-color: gray; opacity: 0.5; position: absolute; width: 100%; height: 100%;"></div>');
             
         }
 
@@ -160,7 +160,7 @@ function closeExam(){
     anime({
         targets: examElement,
         scale: 1,
-        translateY: 10,
+        translateY: "20%",
         easing: 'easeInOutQuad',
         duration: 200,
         complete: function (){
@@ -171,4 +171,20 @@ function closeExam(){
 
     });
 
+}
+
+function loadQuestions(number) {
+    console.log("loading questions");
+    //document.getElementById("examQuestions").innerText = 
+    let str = "";
+
+    testsObj[number].forEach(function(elem, index){
+        str += elem.question + "\n";
+        elem.answers.forEach(function(answer, index){
+            str += answer + "\n";
+        });
+        str += "\n";
+    });
+
+    document.getElementById("examQuestions").innerText = str;
 }

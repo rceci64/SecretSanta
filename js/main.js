@@ -3,7 +3,9 @@ var animation;
 var dialogElement;
 const reader = new FileReader();
 const dialoguesPath = 'dialogues.json';
+const testsPath = 'tests.json';
 let dialoguesObj;
+let testsObj;
 var currentDialogue;
 let currentText = 0;
 var stopSnowOnLoadNextScene = false;
@@ -108,6 +110,12 @@ window.onload = () => {
     
     loadJSON(dialoguesPath,
         function(data) { console.log(data); mainGame(data); },
+        function(xhr) { console.error(xhr); }
+    );
+
+    // Load exam questions
+    loadJSON(testsPath,
+        function(data) { console.log(data);  testsObj = data},
         function(xhr) { console.error(xhr); }
     );
 
