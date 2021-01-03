@@ -66,7 +66,14 @@ let option = (optionNumber) => {
         console.log(currentNext);
         let nextItem = dialoguesObj[currentNext.npc][currentNext.id];
         currentDialogue = nextItem;
+
+        // Amagar el quadre de diàleg
+        //document.getElementById("dialogueContent").style.visibility = "hidden";
+        // Canviem el text
         document.getElementById("dialogueContent").innerText = currentDialogue.text;
+        // Reproduim l'animació
+        animateLetters();
+        // Actualitzem botons
         updateButtons(currentDialogue.options);
 
 
@@ -88,7 +95,7 @@ let option = (optionNumber) => {
 
 let mainGame = (dialogues) => {
     dialoguesObj = dialogues;
-    loadScene('scene2');
+    loadScene('scene0');
     //currentDialogue = dialoguesObj["santa"]["001"];
     //document.getElementById("dialogueBox").style.display = "";
     // document.getElementById("dialogueContent").innerText = currentDialogue.text;

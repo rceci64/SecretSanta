@@ -56,7 +56,7 @@ function loadScene(id){
     if (id != document.querySelector(".container.active").id){
 
         // When switching between scenes, hide dialoguebox
-        hideDialogue()
+        hideDialogue();
         //document.getElementById("dialogueBox").style.display = "none";
 
 
@@ -109,6 +109,7 @@ function loadScene(id){
 function showDialogue(){
     let dialogueBox = document.getElementById("dialogueBox");
 
+
     anime({
         targets: dialogueBox,
         opacity: 1,
@@ -130,6 +131,31 @@ function hideDialogue(){
     });
 }
 
+function animateLetters(){
+    var test = new Letterize({
+        targets: "#dialogueContent"
+    });
+
+    test.listAll().forEach(function(currentValue){
+        currentValue.style.opacity = 0;
+    });
+
+    //document.getElementById("dialogueContent").style.display = "inherit";
+    document.getElementById("dialogueContent").style.opacity = 1;
+
+
+    var tl = anime.timeline({
+        targets: test.listAll(),
+        delay: anime.stagger(50),
+    });
+  
+    tl
+    .add({
+        opacity: 1,
+        duration: 50,
+    })
+}
+
 function randomInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -138,16 +164,26 @@ function openExam(){
     console.log("open exam");
     examElement = document.getElementById("examen");
 
-    anime({
+    var tl = anime.timeline({
+        easing: 'easeOutElastic',
+        duration: 750
+    });
+
+    tl.add({
         targets: examElement,
-        scale: 10,
-        translateY: "-20%",
+        scale: 13,
+        translateY: "-16%",
         begin: function (){
             examElement.style.display = "";
             examElement.insertAdjacentHTML('afterend', '<div class="surface" onclick="closeExam()" style="z-index: 99; background-color: gray; opacity: 0.5; position: absolute; width: 100%; height: 100%;"></div>');
             
         }
 
+    });
+
+    tl.add({
+        targets: "#examContent",
+        opacity: 1
     });
 
 }
@@ -160,9 +196,12 @@ function closeExam(){
     anime({
         targets: examElement,
         scale: 1,
-        translateY: "20%",
+        translateY: "16%",
         easing: 'easeInOutQuad',
         duration: 200,
+        begin: function(){
+            document.getElementById("examContent").style.opacity = 0;
+        },
         complete: function (){
             examElement.style.display = "none";
             document.querySelector(".surface").remove();
