@@ -183,12 +183,13 @@
 
 #examQuestions {
     position: absolute;
-    top: 23%;
+    top: 26%;
     left: 50%;
     height: 73%;
     width: 40%;
     margin-left: -20.5%;
     /*background-color: chocolate;*/
+    font-size: 1.4vw;
 }
 
 #examName {

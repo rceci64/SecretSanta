@@ -47,7 +47,7 @@
         <!---------------------------  Examen 1 escena  ------------------------->
         <div class="container" id="scene2" style="opacity: 0; display: none;">
             <button onclick="loadScene('scene1')" style="position: absolute; height: 50px; top: 30%; left: 80%">(Debug) Load scene 1</button>
-            <button onclick="loadQuestions(0)" style="position: absolute; height: 50px; top: 50%; left: 80%">(Debug) Load exam questions</button>
+            <button onclick="loadQuestions(0, true)" style="position: absolute; height: 50px; top: 50%; left: 80%">(Debug) Load exam questions</button>
             
             
             <!-- Taules i cadires -->
@@ -76,21 +76,13 @@
             
             <!-- Player exam -->
             <img class="minitest" onclick="openExam()" src="assets/escenaris/minitest.svg" style="position: absolute; width: 3%; top:61.8%; left:50%; margin-left: -1.5%;">
-
-
             <img class="minitest" src="assets/escenaris/minitest.svg" style="position: absolute; width: 3%; top:61.8%; left:32%; margin-left: -1.5%;">
             <img class="minitest" src="assets/escenaris/minitest.svg" style="position: absolute; width: 3%; top:61.8%; left:68%; margin-left: -1.5%;">
-
             <img class="minitest" src="assets/escenaris/minitest.svg" style="position: absolute; width: 3%; top:81.8%; left:50%; margin-left: -1.5%; z-index: 99">
             <img class="minitest" src="assets/escenaris/minitest.svg" style="position: absolute; width: 3%; top:81.8%; left:32%; margin-left: -1.5%; z-index: 99">
             <img class="minitest" src="assets/escenaris/minitest.svg" style="position: absolute; width: 3%; top:81.8%; left:68%; margin-left: -1.5%; z-index: 99">
             
             
-            <img id="examen" src="assets/ui/examenGaletes.svg" style="width: 3.5%; height: auto; position: absolute; z-index: 100; margin-left: -1.75%; left: 50%; top: 61.5%; display: none">
-            <div id="examContent">
-                <div id="examName" style="position: absolute; top: 16.5%; left: 35%;">Roger</div>
-                <div id="examQuestions"></div>
-            </div>
 
             <img class="npc" id="bola" src="assets/personatges/bola.svg" style="z-index: 9; width: 8%; top:71%; left:27.5%">
             <img class="npc" id="sac" src="assets/personatges/sac.svg" style="width: 10%; top:48%; left:63%">
@@ -102,7 +94,7 @@
         </div>
 
 
-        <!----------- Container UI (dialogue buttons and settings) ------------->
+        <!----------- Container UI (dialogue buttons and settings), exam Interface ------------->
         <div class="container" id="ui" style="pointer-events: none;">
             <div style="width: 100%; height: 100%;" style="pointer-events: none;">
 
@@ -129,7 +121,22 @@
                     </div>
                 </div>
 
+
+                <!---------------------- EXAM UI ----------------------->
+                <div style="pointer-events: all;">
+                    <img id="examen" src="assets/ui/examenGaletes.svg" style="width: 3.5%; height: auto; position: absolute; z-index: 100; margin-left: -1.75%; left: 50%; top: 61.5%; display: none;">
+                    <div id="examContent">
+                        <div id="examName" style="position: absolute; top: 16.5%; left: 35%;">Roger</div>
+                        <div id="examQuestions"></div>
+                    </div>
+                    <button id="nextPage" onclick="nextExamPage()" style="z-index: 125; position: absolute; top:50%; left:80%; margin-left: -61%; display: none">Next page</button>
+                    <button id="prevPage" onclick="previousExamPage()" style="z-index: 125; position: absolute; top:50%; left:20%; margin-left: -50%; display: none">Previous page</button>
+                </div>
+                <!----->
+
             </div>
+
+            
         </div>
 
 

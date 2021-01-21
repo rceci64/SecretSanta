@@ -1,34 +1,54 @@
 [
     [
         {
-            "question": "Which blagsjfssd ?",
+            "question": "How many grams of flour are needed to make 10 cookies?",
             "answers": [
-                "answer A",
-                "answer B",
-                "answer C",
-                "answer D"
+                "50 grams",
+                "125 grams",
+                "300 grams",
+                "500 grams"
+            ],
+            "correct" : "D"
+        },
+        {
+            "question": "Which of the following ingredients is in the recipe?",
+            "answers": [
+                "Pizza",
+                "Large egg",
+                "Cream",
+                "Yeast"
+            ],
+            "correct" : "B"
+        },
+        {
+            "question": "What temperature setting do cookies need to cook perfectly?",
+            "answers": [
+                "420 ºC",
+                "69 ºC",
+                "170 ºC",
+                "180 ºC"
+            ],
+            "correct" : "C"
+        },
+        {
+            "question": "What cooking time do cookies need?",
+            "answers": [
+                "Between 10 and 12 minutes",
+                "Between 1 hour and 2 hours",
+                "5 minutes",
+                "Between 60 and 160 minutes"
             ],
             "correct" : "A"
         },
         {
-            "question": "Which blagsjfssd csdsd?",
+            "question": "Butter should be microwaved. True or false?",
             "answers": [
-                "answer A",
-                "answer B",
-                "answer C",
-                "answer D"
+                "True, for 2 minutes to obtain a liquid texture",
+                "False, should be at room temperature",
+                "True, 10 seconds in the microwave",
+                "False, you should put it in the freezer for 15 minutes"
             ],
-            "correct" : "A"
-        },
-        {
-            "question": "Which blagsjfssd dfsfs?",
-            "answers": [
-                "answer A",
-                "answer B",
-                "answer C",
-                "answer D"
-            ],
-            "correct" : "A"
+            "correct" : "B"
         }
     ]
 ]

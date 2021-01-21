@@ -175,8 +175,8 @@ function openExam(){
         translateY: "-16%",
         begin: function (){
             examElement.style.display = "";
-            examElement.insertAdjacentHTML('afterend', '<div class="surface" onclick="closeExam()" style="z-index: 99; background-color: gray; opacity: 0.5; position: absolute; width: 100%; height: 100%;"></div>');
-            
+            examElement.insertAdjacentHTML('afterend', '<div class="surface" onclick="closeExam()" style="z-index: 99; background-color: gray; opacity: 0.5; position: absolute; width: 100%; height: 100%; pointer-events: all;"></div>');
+            document.getElementById("nextPage").style.display = "inherit";
         }
 
     });
@@ -201,29 +201,54 @@ function closeExam(){
         duration: 200,
         begin: function(){
             document.getElementById("examContent").style.opacity = 0;
+            document.getElementById("nextPage").style.display = "none";
+            document.getElementById("prevPage").style.display = "none";
+
         },
         complete: function (){
             examElement.style.display = "none";
             document.querySelector(".surface").remove();
-            
         }
-
     });
-
 }
 
-function loadQuestions(number) {
-    console.log("loading questions");
+/**
+ * 
+ * @param {*} number Numero d'examen (0, 1, 2)
+ * @param {*} davant Si s'han de carregar les preguntes del davant o del darrere (true = davant, false = darrere)
+ */
+function loadQuestions(number, davant) {
+    console.log("loading questions of number: ", number, " davant? ", davant);
     //document.getElementById("examQuestions").innerText = 
     let str = "";
 
-    testsObj[number].forEach(function(elem, index){
-        str += elem.question + "\n";
-        elem.answers.forEach(function(answer, index){
-            str += answer + "\n";
+    let min = davant ? 0 : 3;
+    let max = davant ? 3 : 5;
+
+    for (i = min; i < max; i++){
+        str += testsObj[number][i].question + "\n";
+        testsObj[number][i].answers.forEach(function(answer, index){
+            str +=  String.fromCharCode(65 + index) + ")  " + answer + "\n";
         });
         str += "\n";
-    });
-
+    }
     document.getElementById("examQuestions").innerText = str;
+
+    console.log(testsObj);
+}
+
+function nextExamPage() { //Passem a la pàgina del darrere. Tal i com està pensat ara els exàmens son de 1 pàgina ( 1 per davant i per darrere )
+
+    // Canviem la imatge activa per la imatge del darrere
+    let arr = document.getElementById("examen").src.split('/');
+    arr.pop();
+    arr.push('examenDarrere.svg');
+    let nStr = arr.join('/');
+    document.getElementById("examen").src = nStr;
+
+    loadQuestions(0, false);
+}
+
+function previousExamPage() {
+    console.log("lmao1");
 }
